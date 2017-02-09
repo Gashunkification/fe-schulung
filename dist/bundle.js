@@ -1675,7 +1675,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_teleport_autocomplete___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_teleport_autocomplete__);
 
 
-const API_KEY = '12455de28945a9185b28127600e08bc8';
+const API_KEY = '';
 
 
 const getWeatherForCityId = (query) => {

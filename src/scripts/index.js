@@ -1,6 +1,6 @@
 import Autocomplete from 'teleport-autocomplete';
 
-const API_KEY = '12455de28945a9185b28127600e08bc8';
+const API_KEY = '';
 
 
 const getWeatherForCityId = (query) => {
