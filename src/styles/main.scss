@@ -1,15 +1,6 @@
 @import "bootstrap/bootstrap";
-@import "city/city-search";
-@import "weather/weather-ui";
+/* import der city-search styles */
 
-body {
-    background: #7f0014;
-}
+/* Body ARITHNEA-Rot machen #7f0014 */
+/* Container der App Abstand nach oben 50px */
 
-.app-container {
-    margin-top: 50px;
-}
-
- .weather-container {
-     height: auto;
- }
