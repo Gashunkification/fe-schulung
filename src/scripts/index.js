@@ -1,21 +1,15 @@
 import Autocomplete from 'teleport-autocomplete';
+import NetworkManager from './lib/NetworkManager';
 
 const API_KEY = '12455de28945a9185b28127600e08bc8';
-
 
 const getWeatherForCityId = (query) => {
     if (!query) { return; }
     const cityId = query.geonameId;
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', 'http://api.openweathermap.org/data/2.5/weather?id=' + cityId + '&APPID=' + API_KEY);
-    xhr.addEventListener('load', (event) => {
-        if (xhr.status >= 200 && xhr.status < 300) {
-            console.log(xhr.responseText);
-        } else {
-            console.error(xhr.statusText, xhr.responseText);
-        }
+    const networkManager = new NetworkManager(API_KEY);
+    networkManager.getWeatherForCity(cityId, (event) => {
+        console.log('callback from networkManager', event);
     });
-    xhr.send();
 };
 
 document.addEventListener("DOMContentLoaded", (event) => { 
