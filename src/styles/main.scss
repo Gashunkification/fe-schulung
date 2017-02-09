@@ -1,0 +1,15 @@
+@import "bootstrap/bootstrap";
+@import "city/city-search";
+@import "weather/weather-ui";
+
+body {
+    background: #7f0014;
+}
+
+.app-container {
+    margin-top: 50px;
+}
+
+ .weather-container {
+     height: auto;
+ }
