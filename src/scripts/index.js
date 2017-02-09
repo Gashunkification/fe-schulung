@@ -21,5 +21,4 @@ const getWeatherForCityId = (query) => {
 document.addEventListener("DOMContentLoaded", (event) => { 
     const autoComplete = new Autocomplete({ el: '#location-input', maxItems: 5 });
     autoComplete.on('change', getWeatherForCityId);
-    console.log(autoComplete);
 });
