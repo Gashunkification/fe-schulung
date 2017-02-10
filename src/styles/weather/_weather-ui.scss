@@ -81,7 +81,7 @@ $animation-easing: cubic-bezier(0.77, 0, 0.175, 1);
   
   h3 {
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.7);
     margin-bottom: 0;
     font-weight: 700;
   }
@@ -98,7 +98,6 @@ $animation-easing: cubic-bezier(0.77, 0, 0.175, 1);
     color: white;
     line-height: 1;
     
-    &:after { content: '\00b0'; }
   }
 }
 
@@ -113,9 +112,9 @@ $animation-easing: cubic-bezier(0.77, 0, 0.175, 1);
   height: 50px;
   transform: translateY($device-height / 6);
 
-  i {
-    font-style: normal;
-    position: absolute;
+  img {
+    height: 120px;
+    width: auto;
   }
 }
 

@@ -48,7 +48,7 @@ gulp.task('webpack-dev-server', () => {
     });
 })
 
-gulp.task('webpack', ['webpack-dev-server'], (callback) => {
+gulp.task('webpack', (callback) => {
     webpack(webpackConfig, (error, stats) => {
         if (error) {
             //throw new gutil.PluginError('webpack', error);
@@ -58,4 +58,4 @@ gulp.task('webpack', ['webpack-dev-server'], (callback) => {
     })
 });
 
-gulp.task('default', ['clean', 'styles', 'watch','webpack']);
+gulp.task('default', ['clean', 'styles', 'watch','webpack', 'webpack-dev-server']);
