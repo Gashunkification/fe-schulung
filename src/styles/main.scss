@@ -1,6 +1,11 @@
 @import "bootstrap/bootstrap";
-/* import der city-search styles */
+@import "city/city-search";
 
-/* Body ARITHNEA-Rot machen #7f0014 */
-/* Container der App Abstand nach oben 50px */
+body {
+    background-color: #7f0014;
+}
+
+.app-container {
+    margin-top: 50px;
+}
 

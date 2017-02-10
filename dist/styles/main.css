@@ -7220,6 +7220,87 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
-/* import der city-search styles */
-/* Body ARITHNEA-Rot machen #7f0014 */
-/* Container der App Abstand nach oben 50px */
+/* line 7, src/styles/city/_city-search.scss */
+.tp-autocomplete {
+  position: relative;
+  margin-bottom: 15px; }
+
+/* line 12, src/styles/city/_city-search.scss */
+.tp-ac__input {
+  width: 100%;
+  padding: 0.25em;
+  border: solid 1px transparent;
+  border-radius: 0;
+  background-color: #fafafa;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.35);
+  font-size: 1.25em;
+  font-weight: bold;
+  -webkit-appearance: none;
+  text-overflow: ellipsis; }
+  /* line 28, src/styles/city/_city-search.scss */
+  .tp-ac__input::-webkit-input-placeholder {
+    color: #ccc;
+    -webkit-font-smoothing: antialiased; }
+  .tp-ac__input::-moz-placeholder {
+    color: #ccc;
+    -webkit-font-smoothing: antialiased; }
+  .tp-ac__input:-ms-input-placeholder {
+    color: #ccc;
+    -webkit-font-smoothing: antialiased; }
+  .tp-ac__input::placeholder {
+    color: #ccc;
+    -webkit-font-smoothing: antialiased; }
+  /* line 34, src/styles/city/_city-search.scss */
+  .tp-ac__input:focus {
+    outline: none; }
+  /* line 38, src/styles/city/_city-search.scss */
+  .tp-ac__input::-ms-clear {
+    display: none; }
+  /* line 42, src/styles/city/_city-search.scss */
+  .spinner .tp-ac__input {
+    padding-right: 1.5em;
+    margin-right: -1.5em; }
+
+/* line 48, src/styles/city/_city-search.scss */
+.tp-ac__list {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  margin: 0;
+  padding-left: 0;
+  list-style-type: none;
+  color: #979797;
+  background-color: #fff;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.35);
+  font-size: 0.875em; }
+
+/* line 65, src/styles/city/_city-search.scss */
+.tp-ac__item {
+  overflow: hidden;
+  padding: 0.35714em 0.71429em;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+  /* line 75, src/styles/city/_city-search.scss */
+  .tp-ac__item:hover, .tp-ac__item.is-active {
+    background-color: #ddd; }
+  /* line 80, src/styles/city/_city-search.scss */
+  .tp-ac__item.no-results, .tp-ac__item.no-results:hover {
+    cursor: default;
+    background-color: #fff; }
+  /* line 87, src/styles/city/_city-search.scss */
+  .tp-ac__item span {
+    color: #4a4a4a;
+    font-weight: bold; }
+
+/* line 4, src/styles/main.scss */
+body {
+  background-color: #7f0014; }
+
+/* line 8, src/styles/main.scss */
+.app-container {
+  margin-top: 50px; }
