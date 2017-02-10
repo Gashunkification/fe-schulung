@@ -4,7 +4,6 @@ import del from 'del';
 import gulp from 'gulp';
 import gutil from 'gulp-util';
 import sass from 'gulp-sass';
-import sourcemaps from 'gulp-sourcemaps';
 import watch from 'gulp-watch';
 import webpack from 'webpack';
 import webpackConfig from './webpack.config';
@@ -30,10 +29,10 @@ gulp.task('watch', () => {
 
 gulp.task('styles', () => {
   return gulp.src(sassPaths.src)
-    .pipe(sourcemaps.init())
-    .pipe(sass.sync().on('error', (error) => {console.log(error)}))
+    .pipe(sass({
+        sourceComments: 'normal'
+    }))
     .pipe(autoprefixer())
-    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(sassPaths.dest));
 });
 
@@ -48,7 +47,7 @@ gulp.task('webpack-dev-server', () => {
     });
 })
 
-gulp.task('webpack', ['webpack-dev-server'], (callback) => {
+gulp.task('webpack', (callback) => {
     webpack(webpackConfig, (error, stats) => {
         if (error) {
             //throw new gutil.PluginError('webpack', error);
@@ -58,4 +57,4 @@ gulp.task('webpack', ['webpack-dev-server'], (callback) => {
     })
 });
 
-gulp.task('default', ['clean', 'styles', 'watch','webpack']);
+gulp.task('default', ['clean', 'styles', 'watch','webpack', 'webpack-dev-server']);
