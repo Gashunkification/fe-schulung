@@ -1,21 +1,20 @@
 import Autocomplete from 'teleport-autocomplete';
+import CityWeather from './lib/CityWeather';
+import WeatherDisplay from './lib/WeatherDisplay';
 
 const API_KEY = '12455de28945a9185b28127600e08bc8';
 
-
 const getWeatherForCityId = (query) => {
     if (!query) { return; }
+
     const cityId = query.geonameId;
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', 'http://api.openweathermap.org/data/2.5/weather?id=' + cityId + '&APPID=' + API_KEY);
-    xhr.addEventListener('load', (event) => {
-        if (xhr.status >= 200 && xhr.status < 300) {
-            console.log(xhr.responseText);
-        } else {
-            console.error(xhr.statusText, xhr.responseText);
-        }
+    const cityWeather = new CityWeather(API_KEY);
+
+    cityWeather.get(cityId, (response) => {
+        // Response ist die Antwort der openWeather API
+       const wd = new WeatherDisplay(response);
+       wd.display('weather')
     });
-    xhr.send();
 };
 
 document.addEventListener("DOMContentLoaded", (event) => { 
