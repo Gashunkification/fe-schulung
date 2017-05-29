@@ -109,16 +109,5 @@ export default class WeatherDisplay {
 
         rootElement = this.__displayIcon(rootElement);
         rootElement = this.__displayContent(rootElement);
-        /*
-            
-            <div class="content">
-                <h3>Morning</h3>
-                <div class="degrees">- 1</div>
-                <div class="data">
-                    <div>Wind: E 7 mph</div>
-                    <div>Humidity: 91%</div>
-                </div>
-            </div>
-         */
     }
 }
