@@ -2,6 +2,7 @@ import Autocomplete from 'teleport-autocomplete';
 import CityWeather from './lib/CityWeather';
 import WeatherDisplay from './lib/WeatherDisplay';
 
+// Openweather API Key - needs to be generated and is unique for every attendee
 const API_KEY = '12455de28945a9185b28127600e08bc8';
 
 const getWeatherForCityId = (query) => {
@@ -17,7 +18,7 @@ const getWeatherForCityId = (query) => {
     });
 };
 
-document.addEventListener("DOMContentLoaded", (event) => { 
+document.addEventListener("DOMContentLoaded", () => { 
     const autoComplete = new Autocomplete({ el: '#location-input', maxItems: 5 });
     autoComplete.on('change', getWeatherForCityId);
 });
