@@ -13,7 +13,10 @@ const dirs = {
   src: 'src',
   dest: 'dist',
 };
-
+const jsDirs = {
+    jquery: `${dirs.src}/scripts/lib/jquery.js`,
+    bootstrap: `${dirs.src}/scripts/lib/bootstrap.min.js`
+}
 const sassPaths = {
   src: `${dirs.src}/styles/*.scss`,
   dest: `${dirs.dest}/styles/`
@@ -22,6 +25,11 @@ const sassPaths = {
 gulp.task('clean', () => {
     return del([sassPaths.dest, dirs.dest]);
 })
+
+gulp.task('copyJs', () => {
+  return gulp.src([jsDirs.jquery, jsDirs.bootstrap])
+    .pipe(gulp.dest(`${dirs.dest}`));
+});
 
 gulp.task('watch', () => {
     gulp.watch('src/**/*.{html,scss,js}', ['clean', 'styles', 'webpack']);
@@ -57,4 +65,4 @@ gulp.task('webpack', (callback) => {
     })
 });
 
-gulp.task('default', ['clean', 'styles', 'watch','webpack', 'webpack-dev-server']);
+gulp.task('default', ['clean', 'styles', 'watch','webpack', 'copyJs', 'webpack-dev-server']);
