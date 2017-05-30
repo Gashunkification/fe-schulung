@@ -1,5 +1,6 @@
 import Autocomplete from 'teleport-autocomplete';
 import CityWeather from './lib/CityWeather';
+import LocationList from './lib/MyLocations';
 import WeatherDisplay from './lib/WeatherDisplay';
 
 // Openweather API Key - needs to be generated and is unique for every attendee
@@ -18,7 +19,18 @@ const getWeatherForCityId = (query) => {
     });
 };
 
+const bindLocationClickHandlers = (buttons = [], action = () => {}) => {
+    for (let i = 0; i < buttons.lenght; i++) {
+        buttons[i].on('click', action);
+    }
+}
+
 document.addEventListener("DOMContentLoaded", () => { 
     const autoComplete = new Autocomplete({ el: '#location-input', maxItems: 5 });
     autoComplete.on('change', getWeatherForCityId);
+
+    const myLocationList = new LocationList();
+
+    const addWeatherButtons = document.getElementsByClassName('js-add-location');
+    bindLocationClickHandlers(addWeatherButtons, myLocationList.addLocationToList)
 });
