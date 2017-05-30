@@ -31,12 +31,58 @@ body {
 }
 
  .weather-container {
+     position: relative;
      background-color: #467ec7;
      color: #fff;
      .weather-img {
          width:150px;
      }
+
+     &:hover .button-add-location {
+        display: inline-block;
+     }
  }
+
+.button-add-location {
+    position: absolute;
+    display: none;
+
+    top: 5px;
+    right: 5px;
+    width: 35px;
+    height: 35px;
+
+    cursor: pointer;    
+    background: white;
+
+    border: 1px solid white;
+    border-radius: 100%;
+    line-height: 25px;
+
+    z-index: 1;
+
+    &:hover {
+        $add-location-hover-color: darken(white, 12%);
+        background: $add-location-hover-color;
+        border: 1px solid $add-location-hover-color;
+    }
+
+    &:before {
+        content: '+';
+        color: #467ec7;
+        font-size: 25px;
+        font-weight: bold;
+    };
+
+}
+
+.block-heading {
+    padding: 5px;
+    color: #9d9d9d;
+    padding-left: 15px;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+}
 
  /*about css */
 
@@ -99,10 +145,5 @@ body {
 .navbar {
     margin-bottom: 0;
 }
-.block-heading {
-    padding: 5px;
-    color: #9d9d9d;
-    padding-left: 15px;
-    background: #f5f5f5;
-    border: 1px solid #ddd;
-}
+
+

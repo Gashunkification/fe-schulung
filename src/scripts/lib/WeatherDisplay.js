@@ -100,11 +100,10 @@ export default class WeatherDisplay {
         return rootElement;
     }
 
-    display(rootElementId) {
-        let rootElement = document.getElementById(rootElementId);
+    display(rootElement) {
         try {
             if (!rootElement) {
-                throw Error('Element with ID: ' + rootElementId + ' was not found!');
+                throw Error('No element found to render to. Please check!');
             }
         } catch (error) {
             console.error(error);
