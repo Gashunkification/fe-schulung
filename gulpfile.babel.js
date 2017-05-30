@@ -23,7 +23,7 @@ const sassPaths = {
 };
 
 gulp.task('clean', () => {
-    return del([sassPaths.dest, dirs.dest]);
+    return del.sync([sassPaths.dest, dirs.dest]);
 })
 
 gulp.task('copyJs', () => {
