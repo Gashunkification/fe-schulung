@@ -108,6 +108,30 @@ body {
     padding-bottom: 70px;
 }
 
+.img-link{
+    overflow: hidden;
+    float: left;
+    position: relative;
+    margin-top: 20px;
+
+    &:hover .img-link-text{
+        margin-bottom:0;
+        transition: all 1s ease;
+        padding: 20px;
+    }
+    .img-link-img {
+        width: 100%;
+    }
+    .img-link-text{
+        position: absolute;
+        bottom: 0;
+        margin-bottom: -100px;
+        background-color: #000;
+        color: #fff;
+
+    }
+}
+
 /* override bootstrap styles */
 
 .panel-group .panel, .panel {

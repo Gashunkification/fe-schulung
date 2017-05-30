@@ -32,7 +32,7 @@ gulp.task('copyJs', () => {
 });
 
 gulp.task('copyImg', () => {
-  return gulp.src([`${dirs.src}/img/*.png`])
+  return gulp.src([`${dirs.src}/img/*.png`, `${dirs.src}/img/*.jpg`])
     .pipe(gulp.dest(`${dirs.dest}/img`));
 });
 
