@@ -32,7 +32,7 @@ gulp.task('copyJs', () => {
 });
 
 gulp.task('watch', () => {
-    gulp.watch('src/**/*.{html,scss,js}', ['clean', 'styles', 'webpack']);
+    gulp.watch('src/**/*.{html,scss,js}', ['clean', 'styles', 'webpack', 'copyJs']);
 });
 
 gulp.task('styles', () => {

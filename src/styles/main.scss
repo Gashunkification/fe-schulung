@@ -1,13 +1,13 @@
 @import "bootstrap/bootstrap";
 @import "city/city-search";
-@import "weather/weather-ui";
+//@import "weather/weather-ui";
 
 html {
-    height: 100%;
+    min-height: 100%;
     width: 100%;
 }
 body {
-    height: 100%;
+    min-height: 100%;
     width: 100%;
     background: rgba(255,255,255,1);
     background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
@@ -20,9 +20,31 @@ body {
 }
 
 .app-container {
-   //  margin-top: 100px;
+   margin-top: 75px;
+}
+
+.sidebar {
+    // padding-top: 15px;
+    //background-color: #ffc53e;
+    @media (min-width: 768px) {
+        height: 600px;
+    }
 }
 
  .weather-container {
-     height: 200px;
+     background-color: #467ec7;
+     color: #fff;
+     .weather-img {
+         width:150px;
+     }
  }
+
+/* override bootstrap styles */
+
+.panel-group .panel, .panel {
+    border-radius: 0;
+}
+
+.panel-group .panel + .panel {
+    margin-top: 0;
+}

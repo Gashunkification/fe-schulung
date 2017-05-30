@@ -14,8 +14,10 @@ export default class WeatherDisplay {
     __getIcon() {
         const iconContainer = document.createElement('div');
         iconContainer.classList.add('icon');
+        iconContainer.classList.add('col-xs-6');
         
         const img = document.createElement('img');
+        img.classList.add('weather-img')
         img.setAttribute('src', 'http://openweathermap.org/img/w/' + this.__getWeather().icon + '.png');
         iconContainer.appendChild(img);
         return iconContainer;
@@ -78,6 +80,7 @@ export default class WeatherDisplay {
 
     __displayContent(rootElement) {
         const contentContainer = document.createElement('div');
+        contentContainer.classList.add('col-xs-6');
         const weatherName = document.createElement('h3');
         const degrees = document.createElement('div');
     
