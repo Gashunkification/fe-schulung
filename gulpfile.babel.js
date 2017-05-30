@@ -31,8 +31,13 @@ gulp.task('copyJs', () => {
     .pipe(gulp.dest(`${dirs.dest}`));
 });
 
+gulp.task('copyImg', () => {
+  return gulp.src([`${dirs.src}/img/*.png`])
+    .pipe(gulp.dest(`${dirs.dest}/img`));
+});
+
 gulp.task('watch', () => {
-    gulp.watch('src/**/*.{html,scss,js}', ['clean', 'styles', 'webpack', 'copyJs']);
+    gulp.watch('src/**/*.{html,scss,js}', ['clean', 'styles', 'webpack', 'copyJs','copyImg']);
 });
 
 gulp.task('styles', () => {
@@ -65,4 +70,4 @@ gulp.task('webpack', (callback) => {
     })
 });
 
-gulp.task('default', ['clean', 'styles', 'watch','webpack', 'copyJs', 'webpack-dev-server']);
+gulp.task('default', ['clean', 'styles', 'watch','webpack', 'copyJs', 'copyImg', 'webpack-dev-server']);
