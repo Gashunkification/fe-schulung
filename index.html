@@ -6,56 +6,113 @@
     <link rel="stylesheet" href="dist/styles/main.css">
 </head>
 <body>
-    <nav class="navbar navbar-inverse" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">Frontendschulung</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="about.html">Über mich</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-    <div id="app-container" class="container app-container">
-        <div class="row">
-            <div class="content col-xs-12 col-sm-8 pull-right">
-                <h3 class="block-heading">Wetterabfrage</h3>
-                <div class="col-xs-12 col-sm-12 panel panel-default">
-                    <div class="panel-body">
-                        <div class="form-group">
-                            <input id="location-input" placeholder="Stadtnamen eingeben" type="text" class="form-control" id="city">
-                        </div>
-                        <div class="weather-container">
-                            <button id="button-add-location" class="button-add-location"></button>
-                            <div id="weather" class="weather row time-morning">
-
-                            </div>
-                        </div>
+    <div class="grid-container">
+        <div class="header">
+            <nav class="navbar navbar-inverse" role="navigation">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <span class="navbar-brand">CSS-Schulung</span>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="index.html">Wetter Portal</a>
+                        </li>
+                        <li>
+                            <a href="about.html">Über mich</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </nav>
+            <div class="header-logo">
+                <a href="index.html"><div class="header-logo-icon"></div>
+                    <div class="header-logo-text">
+                        <h1 class="header-logo-headline">CSS-Schulung</h1>
+                        <div class="header-logo-quote">Wetter Portal </div>
                     </div>
-                </div>
+                </a>    
             </div>
-            <div class="sidebar col-xs-12 col-sm-4 pull-left">
-                <h3 class="block-heading">Meine gespeicherten Orte</h3>
-                <div class="panel-group" id="accordion">
-                    Bisher keine Orte gespeichert...
+        </div>
+        <div id="app-container" class="main">
+            <div class="form-group form-group--main">
+                <input id="location-input" placeholder="Stadtnamen eingeben" type="text" id="city">
+            </div>
+           <!-- <div class="weather-container">
+                <button id="button-add-location" class="button-add-location"></button>
+                <div id="weather" class="weather row time-morning">
+                </div>
+            </div>  -->
+    <div class="results">       
+    <!--<img src="dist/img/slide2.jpg" class="img-responsive hidden-xs hidden-sm" alt="Bird">   -->
+    <picture>
+        <source media="(min-width: 768px )" srcset="dist/img/slide2.jpg">
+        <source media="(max-width: 767px )"srcset="dist/img/slide2sm.jpg">
+        <img class="img-responsive" src="dist/img/slide2sm.jpg" alt="">
+</picture>
+
+        <div class="results-container">
+        <h3 class="results-headline">Karlsruhe</h3> <div class="button button--quad results-more">
+    &gt;
+        <div class="location results-location">
+                <div class="location-headline">Durchgängig Sonnenschein</div>
+                    <div class="location-icon"><div class="sun"></div></div>
+                <div class="location-meta">
+                    <span>Wind: 290°, 1.30km/h</span><br>
+                    <span class="location-temp-max">Max 27°</span>|
+                    <span class="location-temp-min">Min 21°</span><br>
+                    <span>Ø 13.0 °C</span>
+                </div>
+    </div>
+    </div><div class="button button--quad results-add">+</div>
+    </div></div>
+    
+    </div>
+
+<div class="main2">
+    <h2>Meine gespeicherten Orte </h2>
+        <div class="panel panel--grey">
+            <div class="panel-header">
+                <h3>zuletzt gespeichert: </h3>
+            </div>
+            <div class="location-container location-container-grid">
+                <div class="location">
+                    <div class="location-icon"><div class="sun"></div></div>
+                    <div class="location-meta">
+                        <span class="location-temp-max">Max 27°</span>|
+                        <span class="location-temp-min">Min 21°</span>
+                    </div>
+                    <div class="location-headline">Augsburg</div>
+                </div>
+                <div class="location">
+                    <div class="location-icon"><div class="cloud"><div class="cloud-raindrop">*</div></div></div>
+                    <div class="location-meta">
+                        <span class="location-temp-max">Max 12°</span>|
+                        <span class="location-temp-min">Min -7°</span>
+                    </div>
+                    <div class="location-headline">Stockholm</div>
+                </div>
+                <div class="location">
+                    <div class="location-icon"><div class="cloud cloud--gray"></div></div>
+                    <div class="location-meta">
+                        <span class="location-temp-max">Max 16°</span>|
+                        <span class="location-temp-min">Min -7°</span>
+                    </div>
+                    <div class="location-headline">Amsterdamm</div>
                 </div>
             </div>
         </div>
-    </div>
+
+        
+      </div>
+    <div>
     <script src="dist/bundle.js"></script>
     <script src="dist/jquery.js"></script>
     <script src="dist/bootstrap.min.js"></script>
