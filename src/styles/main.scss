@@ -43,6 +43,12 @@ h3 {
     }
 }
 
+.navbar {
+    @media all {
+        border-radius: 0;
+    }
+}
+
  /*about css */
 
   .bg-1 { 
