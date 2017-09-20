@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Frontend Basisschulung</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="dist/styles/main.css">
 </head>
+
 <body>
     <div class="grid-container">
         <div class="header">
@@ -17,7 +19,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <span class="navbar-brand">CSS-Schulung</span>
+                    <span class="navbar-brand">Frontend Basisschulung</span>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -33,88 +35,96 @@
                 <!-- /.navbar-collapse -->
             </nav>
             <div class="header-logo">
-                <a href="index.html"><div class="header-logo-icon"></div>
+                <a href="index.html">
+                    <div class="header-logo-icon"></div>
                     <div class="header-logo-text">
-                        <h1 class="header-logo-headline">CSS-Schulung</h1>
+                        <h1 class="header-logo-headline">Frontend Basisschulung</h1>
                         <div class="header-logo-quote">Wetter Portal </div>
                     </div>
-                </a>    
+                </a>
             </div>
         </div>
         <div id="app-container" class="main">
             <div class="form-group form-group--main">
                 <input id="location-input" placeholder="Stadtnamen eingeben" type="text" id="city">
             </div>
-           <!-- <div class="weather-container">
-                <button id="button-add-location" class="button-add-location"></button>
-                <div id="weather" class="weather row time-morning">
-                </div>
-            </div>  -->
-    <div class="results">       
-    <!--<img src="dist/img/slide2.jpg" class="img-responsive hidden-xs hidden-sm" alt="Bird">   -->
-    <picture>
-        <source media="(min-width: 768px )" srcset="dist/img/slide2.jpg">
-        <source media="(max-width: 767px )"srcset="dist/img/slide2sm.jpg">
-        <img class="img-responsive" src="dist/img/slide2sm.jpg" alt="">
-</picture>
+            <div class="results">
+                <picture>
+                    <source media="(min-width: 768px )" srcset="dist/img/slide2.jpg">
+                    <source media="(max-width: 767px )" srcset="dist/img/slide2sm.jpg">
+                    <img class="img-responsive" src="dist/img/slide2sm.jpg" alt="">
+                </picture>
 
-        <div class="results-container">
-        <h3 class="results-headline">Karlsruhe</h3> <div class="button button--quad results-more">
-    &gt;
-        <div class="location results-location">
-                <div class="location-headline">Durchgängig Sonnenschein</div>
-                    <div class="location-icon"><div class="sun"></div></div>
-                <div class="location-meta">
-                    <span>Wind: 290°, 1.30km/h</span><br>
-                    <span class="location-temp-max">Max 27°</span>|
-                    <span class="location-temp-min">Min 21°</span><br>
-                    <span>Ø 13.0 °C</span>
-                </div>
-    </div>
-    </div><div class="button button--quad results-add">+</div>
-    </div></div>
-    
-    </div>
-
-<div class="main2">
-    <h2>Meine gespeicherten Orte </h2>
-        <div class="panel panel--grey">
-            <div class="panel-header">
-                <h3>zuletzt gespeichert: </h3>
-            </div>
-            <div class="location-container location-container-grid">
-                <div class="location">
-                    <div class="location-icon"><div class="sun"></div></div>
-                    <div class="location-meta">
-                        <span class="location-temp-max">Max 27°</span>|
-                        <span class="location-temp-min">Min 21°</span>
+                <div id="weathercontainer" class="results-container">
+                    <h3 class="results-headline">Karlsruhe</h3>
+                    <div class="button button--quad results-more">
+                        <div class="location results-location">
+                            <div class="location-headline">Durchgängig Sonnenschein</div>
+                            <div class="location-icon">
+                                <div class="sun"></div>
+                            </div>
+                            <div class="location-meta">
+                                <span>Wind: 290°, 1.30km/h</span><br>
+                                <span class="location-temp-max">Max 27°</span>|
+                                <span class="location-temp-min">Min 21°</span><br>
+                                <span>Ø 13.0 °C</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="location-headline">Augsburg</div>
-                </div>
-                <div class="location">
-                    <div class="location-icon"><div class="cloud"><div class="cloud-raindrop">*</div></div></div>
-                    <div class="location-meta">
-                        <span class="location-temp-max">Max 12°</span>|
-                        <span class="location-temp-min">Min -7°</span>
-                    </div>
-                    <div class="location-headline">Stockholm</div>
-                </div>
-                <div class="location">
-                    <div class="location-icon"><div class="cloud cloud--gray"></div></div>
-                    <div class="location-meta">
-                        <span class="location-temp-max">Max 16°</span>|
-                        <span class="location-temp-min">Min -7°</span>
-                    </div>
-                    <div class="location-headline">Amsterdamm</div>
+                    <div class="button button--quad results-add">+</div>
                 </div>
             </div>
+
         </div>
 
-        
-      </div>
-    <div>
-    <script src="dist/bundle.js"></script>
-    <script src="dist/jquery.js"></script>
-    <script src="dist/bootstrap.min.js"></script>
+        <div class="main2">
+            <h2>Meine gespeicherten Orte </h2>
+            <div class="panel panel--grey">
+                <div class="panel-header">
+                    <h3>zuletzt gespeichert: </h3>
+                </div>
+                <div class="location-container location-container-grid">
+                    <div class="location">
+                        <div class="location-icon">
+                            <div class="sun"></div>
+                        </div>
+                        <div class="location-meta">
+                            <span class="location-temp-max">Max 27°</span>|
+                            <span class="location-temp-min">Min 21°</span>
+                        </div>
+                        <div class="location-headline">Augsburg</div>
+                    </div>
+                    <div class="location">
+                        <div class="location-icon">
+                            <div class="cloud">
+                                <div class="cloud-raindrop">*</div>
+                            </div>
+                        </div>
+                        <div class="location-meta">
+                            <span class="location-temp-max">Max 12°</span>|
+                            <span class="location-temp-min">Min -7°</span>
+                        </div>
+                        <div class="location-headline">Stockholm</div>
+                    </div>
+                    <div class="location">
+                        <div class="location-icon">
+                            <div class="cloud cloud--gray"></div>
+                        </div>
+                        <div class="location-meta">
+                            <span class="location-temp-max">Max 16°</span>|
+                            <span class="location-temp-min">Min -7°</span>
+                        </div>
+                        <div class="location-headline">Amsterdam</div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div>
+        <script src="dist/bundle.js"></script>
+        <script src="dist/jquery.js"></script>
+        <script src="dist/bootstrap.min.js"></script>
 </body>
+
 </html>

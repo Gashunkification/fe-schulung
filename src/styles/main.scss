@@ -237,6 +237,9 @@ h3 {
 
         .results-more {
             margin-left: -5px;
+            &:before {
+                content: '>';
+            }
             // transform: rotate(-90deg);
           /*  &.results-more:hover {
                 transform: rotate(90deg);
