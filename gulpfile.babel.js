@@ -40,11 +40,11 @@ gulp.task('watch', () => {
     gulp.watch('src/**/*.{html,scss,js}', ['clean', 'styles', 'webpack', 'copyJs','copyImg']);
 });
 
-gulp.task('styles', () => {
+gulp.task('styles', (errorHandler) => {
   return gulp.src(sassPaths.src)
     .pipe(sass({
         sourceComments: 'normal'
-    }))
+    }).on('error', errorHandler))
     .pipe(autoprefixer())
     .pipe(gulp.dest(sassPaths.dest));
 });

@@ -8,6 +8,7 @@
 html {
     min-height: 100%;
     width: 100%;
+    font-size: initial;
 }
 body {
     min-height: 100%;
@@ -15,11 +16,11 @@ body {
 }
 
 h2 {
-    font-size: 60px;
+    font-size: 3.8rem;
     font-weight: 300;
     font-family: Open Sans;
     color: $color-blue;
-    padding: 80px 40px;
+    padding: 1.2em 20px;
     @media (max-width: $screen-xxs-max){
         padding-left: 20px;
         padding-right: 20px;
@@ -31,40 +32,16 @@ h3 {
     font-family: Open Sans;
     background-color: $color-lightblack;
     color: $color-white;
-    font-size: 30px;
+    font-size: 1.9rem;
     padding: 0 40px;
     font-weight: 300;
-    line-height: 60px;
+    line-height: 2em;
     margin: 0;
     @media (max-width: $screen-xxs-max){
         padding-left: 20px;
         padding-right: 20px;
         display: block;
     }
-}
-
- /*about css */
-
-  .bg-1 { 
-      background-color: #1abc9c; /* Green */
-      color: #ffffff;
-  }
-  .bg-2 { 
-      background-color: #474e5d; /* Dark Blue */
-      color: #ffffff;
-  }
-  .bg-3 { 
-      background-color: #ffffff; /* White */
-      color: #555555;
-  }
-  .bg-4 { 
-      background-color: #2f2f2f; /* Black Gray */
-      color: #fff;
-  }
-
-.container-padding {
-    padding-top: 70px;
-    padding-bottom: 70px;
 }
 
 /* override bootstrap styles */
@@ -74,31 +51,31 @@ h3 {
 
 .grid-container {
   display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-columns: 100%;
   grid-template-rows: auto auto auto;
   grid-template-areas: 
-    "header header header header"
-    "main main main main"
-    "maint-list maint-list maint-list maint-list";
+    "header"
+    "main"
+    "maint-list";
   justify-content: center;
 }
 
 .header {
   grid-column-start: 1;
-  grid-column-end: 5;
+  grid-column-end: 2;
   grid-row-start: 1;
   grid-row-end: 1;
 }
 .main {
   grid-column-start: 1;
-  grid-column-end: 5;
+  grid-column-end: 2;
   grid-row-start: 2;
   grid-row-end: 2;
 
 }
 .main2 {
   grid-column-start: 1;
-  grid-column-end: 5;
+  grid-column-end: 2;
   grid-row-start: 3;
   grid-row-end: 3;
 }
@@ -108,8 +85,12 @@ h3 {
       grid-template-columns: 20% 20% 20% 20% 20%;
       grid-template-rows: auto;
       justify-content: center;
-        @media(max-width:768px) {
+        @media(max-width:$screen-sm-min) {
             grid-template-columns: 50% 50%;
+            grid-template-rows: auto;
+        }
+        @media(max-width:$screen-xs-min) {
+            grid-template-columns: 100%;
             grid-template-rows: auto;
         }
 }
@@ -121,7 +102,7 @@ h3 {
    grid-row-end: auto;
 }
 .panel {
-    background-color: #fff;
+    background-color: $color-white;
     &.panel--grey {
         background-color: $color-gray;
     }
@@ -133,23 +114,14 @@ h3 {
 
     .panel-header {
         width: 100%;
-        .panel-headline {
-            font-size: 30px;
-            line-height: 60px;
-            display: inline-block;
-            padding: 0px 40px;
-            color: #ffffff;
-            font-weight: 300;
-            font-family: Open Sans;
-            background-color: $color-lightblack;
-        }   
     }
 }
 
 
 .form-group--main {
+    font-size: 1rem;
     background-color: $color-gray;
-    padding: 40px;
+    padding: 2.5em;
     margin: 0;
     @media (max-width: $screen-xxs-max){
         padding-left: 20px;
@@ -159,8 +131,10 @@ h3 {
 
 
 .header-logo {
+    font-size: 1rem;
     float: left;
-    padding: 80px 40px;
+    padding: 5em 40px;
+    width: 100%;
     @media (max-width: $screen-xxs-max){
         padding-left: 20px;
         padding-right: 20px;
@@ -168,41 +142,38 @@ h3 {
     .header-logo-icon {
         float: left;
         color: $color-red;
-        font-size: 80px;
+        font-size: 4em;
         background-color: $color-red;
         color: $color-white;
-        height: 65px;
-        width: 65px;
+        height: 1em;
+        width: 1em;
         border: 5px solid $color-white;
         border-radius: 50%;
-        box-shadow: 0px 0px 0px 3.5px $color-red;
-        margin-top:20px;
+        box-shadow: 0px 0px 0px 0.055em $color-red;
+        margin-top:0.313em;
+        margin-right: 0.313em;
 
         @media(max-width: $screen-xs-max) {
             display: none;
         }
     }
     .header-logo-text {
-    float: right;
-    margin-left: 20px;
-    @media(max-width: $screen-xs-max) {
-            margin-left: 0;
-        }
+    float: left;
 
-    @media (max-width: $screen-xxs-max){
+    @media (max-width: $screen-xs-max){
         float: none;
         margin: 0;
     }
         .header-logo-headline {
-            font-size: 70px;
+            font-size: 4.2rem;
             color: $color-lightblack;
             font-weight: 300;
             font-family: Open Sans;
             margin: 0;
         }
         .header-logo-quote {
-            font-size: 19px;
-            color: #9fa2a6;
+            font-size: 1.2rem;
+            color: $color-lightgray;
             font-weight: 300;
             text-transform: uppercase;
             font-family: Open Sans;
@@ -223,20 +194,14 @@ h3 {
             position: absolute;
             right: 0;
             left: 0;
-            font-size: 14px;
-            line-height: 20px;
+            line-height: 1em;
             font-weight: normal;
             opacity: 0;
         }
 
         .results-more {
             margin-left: -5px;
-            // transform: rotate(-90deg);
-          /*  &.results-more:hover {
-                transform: rotate(90deg);
-            } */
             &.results-more:hover .results-location {
-              //  transform: rotate(0deg);
                 transition: opacity 1s ease-in;
                 opacity: 1;
             }
@@ -244,18 +209,22 @@ h3 {
 
         .results-add {
             margin-left: 40px;
+            @media(max-width: $screen-xs-max) {
+                margin-left: 0;
+            }
         }
 
     }
 }
 
 .location {
-    padding: 40px;
+    padding: 2.778em 40px;
     float: left;
     position: relative;
     text-align: center;
     background-color: $color-gray;
     color: $color-lightblack;
+    font-size: 0.9rem;
     @media (max-width: $screen-xxs-max){
         padding-left: 20px;
         padding-right: 20px;
@@ -266,11 +235,14 @@ h3 {
     background-color: $color-white;
 }
 .location-icon {
-    height:65px;
+    font-size: 1rem;
+    height: 4em;
 }
 
 .location-meta {
     margin-top: 20px;
+    font-size: 1em;
+
 }
 .location-temp-max {
     color: $color-red;
@@ -280,12 +252,14 @@ h3 {
 }
 
 .location-headline {
-    font-size: 19px;
-    color: #9fa2a6;
+    font-size: 1.2rem;
+    line-height: 1em;
+    color: $color-lightgray;
     font-weight: 300;
     text-transform: uppercase;
     font-family: Open Sans;
     padding-bottom: 40px;
+    word-wrap: break-word;
 }
 
 .button {
@@ -293,10 +267,10 @@ h3 {
     font-family: Open Sans;
     background-color: $color-blue;
     color: $color-white;
-    font-size: 30px;
+    font-size: 1.9rem;
     padding: 0 15px;
     font-weight: 300;
-    line-height: 60px;
+    line-height: 2em;
 
     &.button:hover {
         background-color: $color-red;
@@ -306,7 +280,7 @@ h3 {
 
 
     &.button--quad {
-        width: 60px;
+        width: 2em;
         text-align: center;
         padding: 0;
     }
@@ -316,8 +290,8 @@ h3 {
 
 .sun {
     background-color: $color-yellow;
-    width: 45px;
-    height: 45px;
+    width: 3em;
+    height: 3em;
     position: relative;
     margin: 0 auto;
     -webkit-animation:spin 4s linear infinite;
@@ -328,28 +302,22 @@ h3 {
         position: absolute;
         top: 0;
         left: 0;
-        height: 45px;
-        width: 45px;
+        height: 3em;
+        width: 3em;
         background-color: $color-yellow;
     }
     &.sun:before {
-        -webkit-transform: rotate(30deg);
-        -moz-transform: rotate(30deg);
-        -ms-transform: rotate(30deg);
-        -o-transform: rotate(30deg);
+        transform: rotate(30deg);
     }
     &.sun:after {
-        -webkit-transform: rotate(60deg);
-        -moz-transform: rotate(60deg);
-        -ms-transform: rotate(60deg);
-        -o-transform: rotate(60deg);
+        transform: rotate(60deg);
     }
 }
 
 
-@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
-@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
-@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+@-moz-keyframes spin { 100% {  transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% {  transform: rotate(360deg); } }
+@keyframes spin { 100% {  transform: rotate(360deg); transform:rotate(360deg); } }
 
 /* END SUN */
 
@@ -437,7 +405,7 @@ h3 {
 
 .tp-ac__input{
     color: #9fa2a6;
-    font-size: 14px;
+    font-size: 0.8rem;
     position: relative;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -448,7 +416,7 @@ h3 {
     box-shadow: none;
     outline: none;
     width: 100%;
-    height: 45px;
+    height: 3em;
     padding-left: 20px;
     padding-right: 80px;
     text-transform: uppercase;
