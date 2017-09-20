@@ -44,6 +44,12 @@ h3 {
     }
 }
 
+.navbar {
+    @media all {
+        border-radius: 0;
+    }
+}
+
 /* override bootstrap styles */
 .navbar {
     margin-bottom: 0;
@@ -201,6 +207,13 @@ h3 {
 
         .results-more {
             margin-left: -5px;
+            &:before {
+                content: '>';
+            }
+            // transform: rotate(-90deg);
+          /*  &.results-more:hover {
+                transform: rotate(90deg);
+            } */
             &.results-more:hover .results-location {
                 transition: opacity 1s ease-in;
                 opacity: 1;

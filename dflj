@@ -1,0 +1,66 @@
+[33mcommit f063d020384984d1c0423ea9ee6e1cf818825834[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Merge: 32f098b 2c3e30a
+Author: Alexander Hasl <alexander.hasl@arithnea.de>
+Date:   Mon May 29 11:30:18 2017 +0200
+
+    Merge branch 'master' of https://github.com/Gashunkification/fe-schulung
+
+[33mcommit 32f098bb70913744a89a908969655ba0b30a4df7[m
+Author: Alexander Hasl <alexander.hasl@arithnea.de>
+Date:   Mon May 29 11:23:31 2017 +0200
+
+    Deleted unnecessary DS_Store files
+
+[33mcommit 2c3e30a41797bc6d60cb152a4aaea46d78c4a62b[m
+Author: jens.primer <jens.primer@arithnea.de>
+Date:   Mon May 29 11:20:59 2017 +0200
+
+    updated gitignore
+
+[33mcommit c7d824fba094bcf744495abbd94bbb8d8ccb1395[m
+Author: jens.primer <jens.primer@arithnea.de>
+Date:   Fri Feb 10 13:03:01 2017 +0100
+
+    fixed things in package.json
+
+[33mcommit 5ce0349721d3d44ee77cff93a87126e03721f58a[m
+Author: jens.primer <jens.primer@arithnea.de>
+Date:   Fri Feb 10 09:53:59 2017 +0100
+
+    Fixed gitignore
+
+[33mcommit f841363cdd641258118acc5186fd578629b8ca55[m
+Author: jens.primer <jens.primer@arithnea.de>
+Date:   Fri Feb 10 09:22:05 2017 +0100
+
+    Fixed gulpfile to not crash on watch task
+
+[33mcommit 24f8190e2d49a2927dba39a2a529f42da0899bbb[m
+Author: jens.primer <jens.primer@arithnea.de>
+Date:   Fri Feb 10 02:29:24 2017 +0100
+
+    Merge with ue4
+
+[33mcommit f4170f9a8580d37c5c64b5c1d40f9845d1ca0473[m
+Author: jens.primer <jens.primer@arithnea.de>
+Date:   Thu Feb 9 22:11:26 2017 +0100
+
+    removed obsolete console.log
+
+[33mcommit 23990a6dc42ad195f5ac97cab390b9a16df20e40[m
+Author: jens.primer <jens.primer@arithnea.de>
+Date:   Thu Feb 9 22:03:06 2017 +0100
+
+    Fixed .gitignore
+
+[33mcommit 7d01a880a2093cb88d555e8de1c204081e3d59a3[m
+Author: jens.primer <jens.primer@arithnea.de>
+Date:   Thu Feb 9 21:49:33 2017 +0100
+
+    Fixed height for weather-container
+
+[33mcommit 26397528159539d3945aa028bc4a2a5d8c5e5501[m
+Author: jens.primer <jens.primer@arithnea.de>
+Date:   Thu Feb 9 21:35:48 2017 +0100
+
+    Initial commit

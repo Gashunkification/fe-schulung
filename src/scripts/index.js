@@ -13,7 +13,7 @@ const autocompleteChangeHandler = query => {
     if (!query) { return; }
 
     cityId = query.geonameId;
-    const targetElement = document.querySelector('#weather');
+    const targetElement = document.querySelector('#weathercontainer');
 
     processWeatherForId(cityId, targetElement);
 };
@@ -45,21 +45,21 @@ const processWeatherForId = (cityId, targetElement) => {
 }
 
 const renderWeather = (JSONData = {}, targetElement) => {
-    // Response ist die Antwort der openWeather API
+    // JSONData ist die Antwort der openWeather API
     const wd = new WeatherDisplay(JSONData);
     wd.display(targetElement);
 }
 
-const bindLocationClickHandlers = (buttons = [], action = () => {console.log('hier ist etwas passiert :)');}) => {
-    for (let i = 0; i < buttons.length; i++) {
-        buttons[i].addEventListener('click', action)
-    }
-}
+// const bindLocationClickHandlers = (buttons = [], action = () => {console.log('hier ist etwas passiert :)');}) => {
+//     for (let i = 0; i < buttons.length; i++) {
+//         buttons[i].addEventListener('click', action)
+//     }
+// }
 
 document.addEventListener("DOMContentLoaded", () => { 
     const autocomplete = new Autocomplete({ el: '#location-input', maxItems: 5 });
     autocomplete.on('change', autocompleteChangeHandler);
 
-    const addLocationButton = document.getElementById('button-add-location');
-    addLocationButton.addEventListener('click', addLocationButtonClickHandler);
+    // const addLocationButton = document.getElementById('button-add-location');
+    // addLocationButton.addEventListener('click', addLocationButtonClickHandler);
 });
