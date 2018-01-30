@@ -1,65 +1,70 @@
 import Autocomplete from 'teleport-autocomplete';
-import CityWeather from './lib/CityWeather';
-import LocationList from './lib/MyLocationList';
+import CityDataLoader from './lib/CityDataLoader';
 import WeatherDisplay from './lib/WeatherDisplay';
+import CityImageDisplay from './lib/CityImageDisplay';
+import CityListDisplay from './lib/CityListDisplay';
 
 // Openweather API Key - needs to be generated and is unique for every attendee
-const API_KEY = '12455de28945a9185b28127600e08bc8';
+const API_KEY = 'c546d0b8f808baf7806efd29aa714684';
+const cityWeather = new CityDataLoader(API_KEY);
+
+const ARITHNEA_CITY_IDS = [2825297, 2938913, 2935517, 2925533, 2911298, 2895044, 2886242, 2866174, 2825297];
+
 let cityId = '';
 
-const myLocationList = new LocationList();
-
 const autocompleteChangeHandler = query => {
-    if (!query) { return; }
-
+    if (!query) {
+        return;
+    }
     cityId = query.geonameId;
-    const targetElement = document.querySelector('#weathercontainer');
+    const weatherContentTarget = document.querySelector('#weathercontainer');
+    const imageContentTarget = document.querySelector('#results');
+    const locationListTarget = document.querySelector('#locationlist');
 
-    processWeatherForId(cityId, targetElement);
+    cityWeather.getLocationImageForCity(query.uaSlug, (response) => {
+        renderCityImage(response, imageContentTarget)
+    });
+
+    cityWeather.getWeatherForCity(cityId, (response) => {
+        renderWeather(response, weatherContentTarget);
+    });
+
+    ARITHNEA_CITY_IDS.forEach((id) => {
+        
+        const listData = [];
+        cityWeather.getWeatherForCity(id, (response) => {
+            listData.push(response);
+        })
+        renderLocationList(listData);
+    });
 };
 
-const addLocationButtonClickHandler = event => {
-    event.preventDefault();
+const renderWeather = (responseData = {}, targetElement) => {
+    const weatherDisplayer = new WeatherDisplay(responseData);
+    weatherDisplayer.display(targetElement);
+}
 
-    /*
-        TODO:
-        
-        *   Füge ID in aktuelle Standortliste hinzu
-        *   Rendere Standortliste anhand von IDs
-        *   ANMERKUNG: Das wird nur im Speicher die Werte ändern
-        *   Diese geänderten HTML-Bäume dann in das Collapsible einfügen!
+const renderCityImage = (responseData = {}, targetElement) => {
+    const cityImageDisplayer = new CityImageDisplay(responseData);
+    cityImageDisplayer.display(targetElement)
+}
 
+const renderLocationList = (listData = {}) => {
+    const locationListDisplayer = new CityListDisplay();
+    // listData.forEach((data) => {
+    //     locationListDisplayer.displayLocationList();
+    // });
+
+    // TODO: 
+    /* Change displayLocationlist so, dass sie nur einmal mit dem Array aufgerufen wird und dann intern iteriert. 
+        Dann kannst du das Löschen selbst bestimmen!
      */
-
-    myLocationList.addLocationToList(cityId);
-    debugger;
-    myLocationList.renderList(API_KEY);
 }
 
-const processWeatherForId = (cityId, targetElement) => {
-    const cityWeather = new CityWeather(API_KEY);
-    
-    cityWeather.get(cityId, (response) => {
-       renderWeather(response, targetElement);
+document.addEventListener("DOMContentLoaded", () => {
+    const autocomplete = new Autocomplete({
+        el: '#location-input',
+        maxItems: 5
     });
-}
-
-const renderWeather = (JSONData = {}, targetElement) => {
-    // JSONData ist die Antwort der openWeather API
-    const wd = new WeatherDisplay(JSONData);
-    wd.display(targetElement);
-}
-
-// const bindLocationClickHandlers = (buttons = [], action = () => {console.log('hier ist etwas passiert :)');}) => {
-//     for (let i = 0; i < buttons.length; i++) {
-//         buttons[i].addEventListener('click', action)
-//     }
-// }
-
-document.addEventListener("DOMContentLoaded", () => { 
-    const autocomplete = new Autocomplete({ el: '#location-input', maxItems: 5 });
     autocomplete.on('change', autocompleteChangeHandler);
-
-    // const addLocationButton = document.getElementById('button-add-location');
-    // addLocationButton.addEventListener('click', addLocationButtonClickHandler);
 });

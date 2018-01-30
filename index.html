@@ -4,6 +4,7 @@
 <head>
     <title>Frontend Basisschulung</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="dist/styles/main.css">
 </head>
 
@@ -56,12 +57,12 @@
         <div class="form-group form-group--main">
             <input id="location-input" placeholder="Stadtnamen eingeben" type="text" id="city">
         </div>
-        <div class="results">
-            <picture>
-                <source media="(min-width: 768px )" srcset="dist/img/slide2.jpg">
-                <source media="(max-width: 767px )" srcset="dist/img/slide2sm.jpg">
-                <img class="img-responsive" src="dist/img/slide2sm.jpg" alt="">
-            </picture>
+        <div id="results" class="results">
+
+            <a id="sourcelink" href="https://commons.wikimedia.org/wiki/File:Neues_Schloss_Schlossplatzspringbrunnen_Jubiläumssäule_Schlossplatz_Stuttgart_2015_01.jpg"
+                class="source-link" target="_blank">  
+                Fotograf: Julian Herzog
+            </a>
 
             <div id="weathercontainer" class="results-container">
                 <h3 class="results-headline">Karlsruhe</h3>
@@ -82,8 +83,56 @@
                     </div>
                 </div>
             </div>
+
+            <picture id="citylogo">
+                <source media="(min-width: 768px )" srcset="dist/img/slide2.jpg">
+                <source media="(max-width: 767px )" srcset="dist/img/slide2sm.jpg">
+                <img class="img-responsive img-full-width" src="dist/img/slide2sm.jpg" alt="">
+            </picture>
         </div>
     </div>
+    <div class="container-fluid">
+        <h2>Meine gespeicherten Orte </h2>
+        <div class="panel panel--grey row">
+            <div class="panel-header">
+                <h3>zuletzt gespeichert: </h3>
+            </div>
+            <div id="locationlist" class="location-container">
+                <div class="location col-xs-6 col-sm-4 col-lg-2">
+                    <div class="location-icon">
+                        <div class="sun"></div>
+                    </div>
+                    <div class="location-meta">
+                        <span class="location-temp-max">Max 27°</span>|
+                        <span class="location-temp-min">Min 21°</span>
+                    </div>
+                    <div class="location-headline">Augsburg</div>
+                </div>
+                <div class="location col-xs-6 col-sm-4 col-lg-2">
+                    <div class="location-icon">
+                        <div class="cloud">
+                            <div class="cloud-raindrop">*</div>
+                        </div>
+                    </div>
+                    <div class="location-meta">
+                        <span class="location-temp-max">Max 12°</span>|
+                        <span class="location-temp-min">Min -7°</span>
+                    </div>
+                    <div class="location-headline">Stockholm</div>
+                </div>
+                <div class="location col-xs-6 col-sm-4 col-lg-2">
+                    <div class="location-icon">
+                        <div class="cloud cloud--gray"></div>
+                    </div>
+                    <div class="location-meta">
+                        <span class="location-temp-max">Max 16°</span>|
+                        <span class="location-temp-min">Min -7°</span>
+                    </div>
+                    <div class="location-headline">Amsterdam</div>
+                </div>
+            </div>
+        </div>
+    </div> 
     <footer class="footer text-center">
         Frontend Basisschulung 2018
     </footer>

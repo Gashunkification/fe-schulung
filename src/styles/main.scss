@@ -141,6 +141,18 @@ h3 {
 .results {
     position: relative;
 
+    .source-link {
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+        color: white;
+        text-decoration: none;
+
+        &:hover {
+            color: lightblue;
+        }
+    }
+
     .results-container {
         position: absolute;
         top: 40px;
@@ -192,6 +204,12 @@ h3 {
         padding-left: 20px;
         padding-right: 20px;
     }
+}
+
+.img-full-width {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 .location--white {
