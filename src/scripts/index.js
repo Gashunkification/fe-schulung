@@ -1,8 +1,8 @@
 import Autocomplete from 'teleport-autocomplete';
 import CityDataLoader from './lib/CityDataLoader';
-import WeatherDisplay from './lib/WeatherDisplay';
 import CityImageDisplay from './lib/CityImageDisplay';
 import CityListDisplay from './lib/CityListDisplay';
+import WeatherDisplay from './lib/WeatherDisplay';
 
 // Openweather API Key - needs to be generated and is unique for every attendee
 const API_KEY = 'c546d0b8f808baf7806efd29aa714684';
@@ -29,14 +29,13 @@ const autocompleteChangeHandler = query => {
         renderWeather(response, weatherContentTarget);
     });
 
+    let listData = [];
     ARITHNEA_CITY_IDS.forEach((id) => {
-        
-        const listData = [];
         cityWeather.getWeatherForCity(id, (response) => {
             listData.push(response);
-        })
-        renderLocationList(listData);
+        });
     });
+    renderLocationList(listData, locationListTarget);
 };
 
 const renderWeather = (responseData = {}, targetElement) => {
@@ -49,8 +48,9 @@ const renderCityImage = (responseData = {}, targetElement) => {
     cityImageDisplayer.display(targetElement)
 }
 
-const renderLocationList = (listData = {}) => {
-    const locationListDisplayer = new CityListDisplay();
+const renderLocationList = (listData = [], locationListTarget) => {
+    const locationListDisplayer = new CityListDisplay(listData);
+    locationListDisplayer.displayLocationList(locationListTarget);
     // listData.forEach((data) => {
     //     locationListDisplayer.displayLocationList();
     // });

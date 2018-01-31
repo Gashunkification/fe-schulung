@@ -19,7 +19,7 @@ export default class CityDataLoader {
 
     __sendRequest(baseUrl, urlParams, callback) {
         const xhr = new XMLHttpRequest();
-        xhr.open('GET', baseUrl + urlParams);
+        xhr.open('GET', baseUrl + urlParams, false);
         xhr.addEventListener('load', (event) => {
             try {
                 if (xhr.status === 404) {

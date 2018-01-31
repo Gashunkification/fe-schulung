@@ -1,6 +1,17 @@
 export default class CityListDisplay {
     constructor(jsonData) {
-        this.jsonData = JSON.parse(jsonData);
+        this.jsonData = jsonData.map(data => JSON.parse(data));
+    }
+
+    __clearNode(node) {
+        while (node.firstChild) {
+            node.removeChild(node.firstChild);
+        }
+        return node;
+    }
+
+    __getDegreesCelcius(tempInKelvin) {
+        return (tempInKelvin - 273.15).toFixed(1) + '°C';
     }
 
     __getLocationIcon() {
@@ -14,7 +25,7 @@ export default class CityListDisplay {
         return container;
     }
 
-    __getLocationMeta() {
+    __getLocationMeta(data) {
         const container = document.createElement('div');
         const wind = document.createElement('span');
         const tempMax = document.createElement('span');
@@ -27,10 +38,10 @@ export default class CityListDisplay {
         tempMin.classList.add('location-temp-min');
         tempTotal.classList.add('location-temp-total');
 
-        wind.innerHTML = 'Wind:' + this.jsonData.wind.deg + '°, ' + this.jsonData.wind.speed + 'km/h';
-        tempMax.innerHTML = this.__getDegreesCelcius(this.jsonData.main.temp_max);
-        tempMin.innerHTML = this.__getDegreesCelcius(this.jsonData.main.temp_min);
-        tempTotal.innerHTML = this.__getDegreesCelcius(this.jsonData.main.temp);
+        wind.innerHTML = 'Wind:' + data.wind.deg + '°, ' + data.wind.speed + 'km/h';
+        tempMax.innerHTML = this.__getDegreesCelcius(data.main.temp_max);
+        tempMin.innerHTML = this.__getDegreesCelcius(data.main.temp_min);
+        tempTotal.innerHTML = this.__getDegreesCelcius(data.main.temp);
 
         container.appendChild(wind);
         container.appendChild(tempMax);
@@ -40,29 +51,47 @@ export default class CityListDisplay {
         return container;
     }
 
-    __getLocationHeadline() {
+    __getLocationHeadline(data) {
         const headline = document.createElement('div');
         headline.classList.add('location-headline');
-        headline.innerHTML = this.jsonData.name;
+        headline.innerHTML = data.name;
         return headline;
     }
 
-    __getLocationContainer() {
+    __getLocationContainer(data) {
         const container = document.createElement('div');
         const icon = this.__getLocationIcon();
-        const metaInformation = this.__getLocationMeta();
-        const headline = this.__getLocationHeadline();
+        const metaInformation = this.__getLocationMeta(data);
+        const headline = this.__getLocationHeadline(data);
 
         container.classList.add('location', 'col-xs-6', 'col-sm-4', 'col-lg-2');
 
         container.appendChild(icon);
         container.appendChild(metaInformation);
         container.appendChild(headline);
+
+        return container;
     }    
 
-    displayLocationList() {
-        const location = this.__getLocationContainer();
-        rootElement.appendChild(location);
+    displayLocationList(rootElement) {
+        try {
+            if (!rootElement) {
+                throw Error('No element found to render to. Please check!');
+            }
+        } catch (error) {
+            console.error(error);
+        }
+
+        this.__clearNode(rootElement);
+
+        console.log(this.jsonData)
+
+        this.jsonData.forEach(data => {
+            const location = this.__getLocationContainer(data);
+            rootElement.appendChild(location);
+        });
+
+
     }
 
     /*
