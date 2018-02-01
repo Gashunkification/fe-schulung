@@ -1,3 +1,5 @@
+import weatherIconMapper from './WeatherIconMapper';
+
 export default class CityListDisplay {
     constructor(jsonData) {
         this.jsonData = jsonData.map(data => JSON.parse(data));
@@ -14,13 +16,12 @@ export default class CityListDisplay {
         return (tempInKelvin - 273.15).toFixed(1) + '°C';
     }
 
-    __getLocationIcon() {
+    __getLocationIcon(data) {
         const container = document.createElement('div');
-        const icon = document.createElement('div');
+        const icon = document.createElement('i');
 
         container.classList.add('location-icon');
-        // TODO: Hier muss irgendwie ne API für die Icon-Klassen hin :D
-        icon.classList.add('sun');
+        icon.classList.add('wi', 'location-icon-wi', weatherIconMapper(data.weather[0].id));
         container.appendChild(icon);
         return container;
     }
@@ -60,7 +61,7 @@ export default class CityListDisplay {
 
     __getLocationContainer(data) {
         const container = document.createElement('div');
-        const icon = this.__getLocationIcon();
+        const icon = this.__getLocationIcon(data);
         const metaInformation = this.__getLocationMeta(data);
         const headline = this.__getLocationHeadline(data);
 
@@ -84,15 +85,12 @@ export default class CityListDisplay {
 
         this.__clearNode(rootElement);
 
-        console.log(this.jsonData)
-
         this.jsonData.forEach(data => {
             const location = this.__getLocationContainer(data);
             rootElement.appendChild(location);
         });
-
-
     }
+}
 
     /*
         <div class="location col-xs-6 col-sm-4 col-lg-2">
@@ -109,4 +107,3 @@ export default class CityListDisplay {
             ...
         </div>
      */
-}

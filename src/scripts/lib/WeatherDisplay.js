@@ -1,3 +1,5 @@
+import weatherIconMapper from './WeatherIconMapper';
+
 export default class WeatherDisplay {
     constructor(jsonData) {
         this.jsonData = JSON.parse(jsonData);
@@ -49,8 +51,7 @@ export default class WeatherDisplay {
         const icon = document.createElement('div');
 
         container.classList.add('location-icon');
-        // TODO: Hier muss irgendwie ne API für die Icon-Klassen hin :D
-        icon.classList.add('sun');
+        icon.classList.add('location-icon-wi', 'wi', weatherIconMapper(this.jsonData.weather[0].id));
         container.appendChild(icon);
         return container;
     }

@@ -44,6 +44,13 @@ h3 {
     height: auto;
 }
 
+.source-link {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: $color-white;
+}
+
 /* override bootstrap styles */
 .navbar {
     margin-bottom: 0;
