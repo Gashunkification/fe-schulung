@@ -45,6 +45,12 @@ h3 {
     }
 }
 
+.img-full-width {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
 /* override bootstrap styles */
 .navbar {
     margin-bottom: 0;

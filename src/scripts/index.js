@@ -51,14 +51,6 @@ const renderCityImage = (responseData = {}, targetElement) => {
 const renderLocationList = (listData = [], locationListTarget) => {
     const locationListDisplayer = new CityListDisplay(listData);
     locationListDisplayer.displayLocationList(locationListTarget);
-    // listData.forEach((data) => {
-    //     locationListDisplayer.displayLocationList();
-    // });
-
-    // TODO: 
-    /* Change displayLocationlist so, dass sie nur einmal mit dem Array aufgerufen wird und dann intern iteriert. 
-        Dann kannst du das Löschen selbst bestimmen!
-     */
 }
 
 document.addEventListener("DOMContentLoaded", () => {
