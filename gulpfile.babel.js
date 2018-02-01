@@ -14,8 +14,8 @@ const dirs = {
   dest: 'dist',
 };
 const jsDirs = {
-    jquery: `${dirs.src}/scripts/lib/jquery.js`,
-    bootstrap: `${dirs.src}/scripts/lib/bootstrap.min.js`
+    jquery: `${dirs.src}/scripts/vendor/jquery.js`,
+    bootstrap: `${dirs.src}/scripts/vendor/bootstrap.min.js`
 }
 const sassPaths = {
   src: `${dirs.src}/styles/main.scss`,

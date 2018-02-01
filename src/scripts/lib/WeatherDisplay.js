@@ -40,7 +40,7 @@ export default class WeatherDisplay {
         innerContainer.appendChild(locationMeta);
 
         outerContainer.appendChild(innerContainer);
-        
+
         return outerContainer;
     }
 
@@ -81,14 +81,6 @@ export default class WeatherDisplay {
         return container;
     }
 
-    __getAddToListButton() {
-        const element = document.createElement('div');
-        element.classList.add('button', 'button--quad', 'results-add');
-        element.innerHTML = '+';
-
-        return element;
-    }
-
     display(rootElement) {
         try {
             if (!rootElement) {
@@ -102,11 +94,9 @@ export default class WeatherDisplay {
 
         const cityHeadline = this.__getCityHeadline();
         const resultButtonContainer = this.__getResultButtonContainer();
-        const addToListButton = this.__getAddToListButton();
 
         rootElement.appendChild(cityHeadline);
         rootElement.appendChild(resultButtonContainer);
-        rootElement.appendChild(addToListButton);
 
         return rootElement;
 
@@ -127,8 +117,7 @@ export default class WeatherDisplay {
                         </div>
                     </div>
                 </div>
-                <div class="button button--quad results-add">+</div>
             </div>
         */
-    }
+    }    
 }
