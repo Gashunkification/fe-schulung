@@ -1,0 +1,240 @@
+@import "variables";
+
+/* SUN */
+
+.sun {
+    background-color: $color-yellow;
+    width: 3em;
+    height: 3em;
+    position: relative;
+    margin: 0 auto;
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+    &.sun:before, &.sun:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 3em;
+        width: 3em;
+        background-color: $color-yellow;
+    }
+    &.sun:before {
+        transform: rotate(30deg);
+    }
+    &.sun:after {
+        transform: rotate(60deg);
+    }
+}
+
+
+@-moz-keyframes spin { 100% {  transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% {  transform: rotate(360deg); } }
+@keyframes spin { 100% {  transform: rotate(360deg); transform:rotate(360deg); } }
+
+/* END SUN */
+
+/*CLOUD */
+
+.cloud {
+    height: 32px;
+    width: 90px;
+    background-color: $color-lightgray;
+    border-radius: 25px;
+    margin: 0 auto;
+    border: 5px solid $color-darkgray;
+    position: relative;
+    top: 15px;
+    z-index: 2; // for raindrops
+    &.cloud--gray {
+        border-color: $color-blue;
+        background-color: $color-white;
+    }
+    .cloud-raindrop {
+        display: inline-block;
+        color: $color-blue;
+        position: absolute;
+        font-size: 20px;
+        animation: MoveUpDown 3s ease infinite;
+        -webkit-animation: MoveUpDown ease 3s infinite;
+        position: absolute;
+        z-index:0;
+    }
+    &.cloud:before {
+        content: "";
+        position: absolute;
+        top: -14px;
+        box-sizing: border-box;
+        height: 27px;
+        width: 27px;
+        left: 10px;
+        border-radius: 50%;
+        border: 5px solid $color-darkgray;
+        border-bottom-color: transparent;
+        border-right-color: transparent;
+        background-color: $color-lightgray;
+        -webkit-transform: rotate(40deg);
+        transform: rotate(40deg);
+    }
+    &.cloud--gray:before {
+        border-top-color: $color-blue;
+        border-left-color: $color-blue;
+        background-color: $color-white;
+    }
+    &.cloud:after {
+        content: "";
+        position: absolute;
+        height: 47px;
+        width: 41px;
+        top: -25px;
+        left: 32px;
+        border-radius: 50%;
+        box-sizing: border-box;
+        border: 5px solid $color-darkgray;
+        border-bottom-color: transparent;
+        background-color: $color-lightgray;
+        border-right-color: transparent;
+        -webkit-transform: rotate(55deg);
+        transform: rotate(55deg);
+    }
+    &.cloud--gray:after {
+        border-top-color: $color-blue;
+        border-left-color: $color-blue;
+        background-color: $color-white;
+    }
+}
+
+@keyframes MoveUpDown {
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+
+  50% {
+    top: 50px;
+  }
+
+  100% {
+      opacity: 1;
+  }
+}
+/* SUN */
+
+.sun {
+    background-color: $color-yellow;
+    width: 3em;
+    height: 3em;
+    position: relative;
+    margin: 0 auto;
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+    &.sun:before, &.sun:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 3em;
+        width: 3em;
+        background-color: $color-yellow;
+    }
+    &.sun:before {
+        transform: rotate(30deg);
+    }
+    &.sun:after {
+        transform: rotate(60deg);
+    }
+}
+
+
+@-moz-keyframes spin { 100% {  transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% {  transform: rotate(360deg); } }
+@keyframes spin { 100% {  transform: rotate(360deg); transform:rotate(360deg); } }
+
+/* END SUN */
+
+/*CLOUD */
+
+.cloud {
+    height: 32px;
+    width: 90px;
+    background-color: $color-lightgray;
+    border-radius: 25px;
+    margin: 0 auto;
+    border: 5px solid $color-darkgray;
+    position: relative;
+    top: 15px;
+    z-index: 2; // for raindrops
+    &.cloud--gray {
+        border-color: $color-blue;
+        background-color: $color-white;
+    }
+    .cloud-raindrop {
+        display: inline-block;
+        color: $color-blue;
+        position: absolute;
+        font-size: 20px;
+        animation: MoveUpDown 3s ease infinite;
+        -webkit-animation: MoveUpDown ease 3s infinite;
+        position: absolute;
+        z-index:0;
+    }
+    &.cloud:before {
+        content: "";
+        position: absolute;
+        top: -14px;
+        box-sizing: border-box;
+        height: 27px;
+        width: 27px;
+        left: 10px;
+        border-radius: 50%;
+        border: 5px solid $color-darkgray;
+        border-bottom-color: transparent;
+        border-right-color: transparent;
+        background-color: $color-lightgray;
+        -webkit-transform: rotate(40deg);
+        transform: rotate(40deg);
+    }
+    &.cloud--gray:before {
+        border-top-color: $color-blue;
+        border-left-color: $color-blue;
+        background-color: $color-white;
+    }
+    &.cloud:after {
+        content: "";
+        position: absolute;
+        height: 47px;
+        width: 41px;
+        top: -25px;
+        left: 32px;
+        border-radius: 50%;
+        box-sizing: border-box;
+        border: 5px solid $color-darkgray;
+        border-bottom-color: transparent;
+        background-color: $color-lightgray;
+        border-right-color: transparent;
+        -webkit-transform: rotate(55deg);
+        transform: rotate(55deg);
+    }
+    &.cloud--gray:after {
+        border-top-color: $color-blue;
+        border-left-color: $color-blue;
+        background-color: $color-white;
+    }
+}
+
+@keyframes MoveUpDown {
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+
+  50% {
+    top: 50px;
+  }
+
+  100% {
+      opacity: 1;
+  }
+}

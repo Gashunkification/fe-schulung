@@ -18,7 +18,7 @@ const jsDirs = {
     bootstrap: `${dirs.src}/scripts/lib/bootstrap.min.js`
 }
 const sassPaths = {
-  src: `${dirs.src}/styles/*.scss`,
+  src: `${dirs.src}/styles/main.scss`,
   dest: `${dirs.dest}/styles/`
 };
 
