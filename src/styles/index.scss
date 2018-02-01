@@ -192,7 +192,10 @@ h3 {
 }
 .location-icon {
     font-size: 1rem;
-    height: 4em;
+    padding: 1em 0;
+    .location-icon-wi {
+        font-size: 3em;
+    }
 }
 
 .location-meta {
