@@ -12,6 +12,8 @@ const getTagWithClassList = (classList = [], tagName = 'div') => {
   return elem;
 };
 
+const getFormattedTemperatureString = (temperature = 0) => `${temperature.toFixed(1).toString().replace('.', ',')}°C`;
+
 const getCityHeading = (name) => {
   const container = getTagWithClassList('container-city-heading');
   const heading = getTagWithClassList('heading-city', 'h3');
@@ -26,7 +28,7 @@ const getContainerTemp = (temp = '', type = 'min') => {
   const temperature = getTagWithClassList(`temp-${type}`, 'span');
   const unit = getTagWithClassList('temp-unit', 'span');
 
-  temperature.innerHTML = `${temp.toString().replace('.', ',')}°C`;
+  temperature.innerHTML = getFormattedTemperatureString(temp);
   unit.innerHTML = `${type}`;
 
   container.appendChild(temperature);
@@ -42,6 +44,7 @@ export default class MarkupGenerator {
     const maxTemp = getContainerTemp(data.list[0].temp.max, 'max');
     const minTemp = getContainerTemp(data.list[0].temp.min);
 
+    result.id = 'details-container';
     headingContainer.innerHTML = 'Aktuell';
 
     result.appendChild(headingContainer);
@@ -68,8 +71,8 @@ export default class MarkupGenerator {
       const icon = getTagWithClassList(['wi', getWeatherIconForId(card.weather.id)], 'i');
 
       conditionName.innerHTML = card.weather.description;
-      tempMax.innerHTML = `Max: ${card.temp.max.toString().replace('.', ',')}°`;
-      tempMin.innerHTML = `Min: ${card.temp.min.toString().replace('.', ',')}°`;
+      tempMax.innerHTML = `Max: ${getFormattedTemperatureString(card.temp.max)}`;
+      tempMin.innerHTML = `Min: ${getFormattedTemperatureString(card.temp.min)}`;
       humidity.innerHTML = `Feuchtigkeit: ${card.humidity}%`;
       wind.innerHTML = `Wind: ${card.wind}km/h`;
 

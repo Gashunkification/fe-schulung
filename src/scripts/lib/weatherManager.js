@@ -30,7 +30,7 @@ const downloadWeatherForecast = (cityId, successCallback, errorCallback) => {
 function displayWeather(response) {
   const formatter = new ResponseFormatter();
   const forecastList = document.getElementById('forecast-list');
-  const detailsContainer = document.getElementById('details-container');
+  const detailsContainer = document.getElementById('details-container').parentNode;
 
 
   formatter.format(response);
