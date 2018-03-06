@@ -1,0 +1,23 @@
+@mixin slide-to-left-keyframes-for-number($n, $step-width: 15) {
+    @keyframes slide-to-left-#{$n} {
+        0% {
+            transform: translateX(100vw);
+        }
+        #{15 + (($n - 1) * $step-width) + 0%} {
+            transform: translateX(75vw);
+        }
+        100% {
+            transform: translateX(0);
+        }
+
+    }
+}
+
+@for $i from 1 through 7 {
+    @include slide-to-left-keyframes-for-number($i);
+    .container-forecast .forecast {
+        &:nth-child(#{$i}) {
+            animation: slide-to-left-#{$i} 1s ease-out;
+        }
+    }
+}

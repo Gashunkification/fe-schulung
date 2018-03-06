@@ -1,0 +1,22 @@
+.heading-container {
+    text-align: center;
+    border-bottom: 3px solid;
+    padding: 5px;
+    margin-bottom: 1em;
+}
+
+.heading-city {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $color-gold;
+    opacity: .75;
+    margin-top: 0;
+}
+
+.forecast:hover .heading-city {
+    color: white;
+}
+
+.heading-condition-name {
+    font-style: italic;
+}

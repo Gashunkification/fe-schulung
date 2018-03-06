@@ -1,0 +1,33 @@
+{
+  "name": "frontend-basis-schulung",
+  "version": "1.0.0",
+  "description": "Basisschulung für Nicht-Frontendler und Einsteiger. Eine Wetter-App auf Basis der Teleport-API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jens Primer",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "teleport-autocomplete": "github:teleport/autocomplete"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-core": "^6.22.1",
+    "babel-preset-es2015": "^6.22.0",
+    "del": "^2.2.2",
+    "eslint": "^4.18.2",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-cli": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-util": "^3.0.8",
+    "gulp-watch": "^4.3.11",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.3.0",
+    "webpack-stream": "^3.2.0"
+  }
+}

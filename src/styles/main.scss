@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,800');
+@import "variables";
+@import "lib/weather-icons-master/sass/weather-icons";
+@import "lib/animations/index";
+@import "lib/autocomplete/autocomplete";
+@import "normalize";
+@import "container";
+@import "headings";
+@import "temperature";
+@import "input";
+.top {
+    display: inline-block;
+    padding: 0;
+    height: 10vh;
+    background: $color-gold;
+}
+
+.left {
+    text-align: center;
+    background: $color-orange;
+    color: white;
+    .content {
+        margin: 0 0 0 auto;
+    }
+}
+
+.right {
+    background: $color-orange--transparent;
+    color: $color-orange;
+    overflow-y: scroll;
+}
+
+.left,
+.right {
+    height: 90vh;
+}
+
+.content {
+    animation: fade-in 1s ease-out;
+    max-width: 100%;
+    @media (min-width: $screen-lg) {
+        max-width: 75%;
+    }    
+    @media (min-width: $screen-xl) {
+        max-width: 50%;
+    }
+}
