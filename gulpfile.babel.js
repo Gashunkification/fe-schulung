@@ -71,5 +71,6 @@ gulp.task('webpack', (callback) => {
   });
 });
 
-gulp.task('default', ['clean', 'styles', 'copy:All', 'watch', 'webpack', 'webpack-dev-server']);
+gulp.task('build', ['clean', 'styles', 'copy:All', 'webpack']);
 gulp.task('copy:All', ['copy:Js', 'copy:Img', 'copy:Fonts', 'copy:HTML', 'copy:CSS']);
+gulp.task('default', ['build', 'watch', 'webpack-dev-server']);
