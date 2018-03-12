@@ -4,7 +4,7 @@ import ResponseFormatter from './responseFormatter';
 const config = {
   API_KEY: 'c546d0b8f808baf7806efd29aa714684',
   API_URLS: {
-    FORECAST: 'http://api.openweathermap.org/data/2.5/forecast/daily/',
+    FORECAST: 'https://api.openweathermap.org/data/2.5/forecast/daily/',
   },
 };
 
