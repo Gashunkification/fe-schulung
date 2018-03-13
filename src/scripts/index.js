@@ -1,5 +1,5 @@
 import TeleportAutoComplete from 'teleport-autocomplete';
-import WeatherManager from './lib/weatherManager';
+import getWeatherDataForCity from './lib/weatherManager';
 import intMobileController from './lib/mobileController';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -7,6 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     el: '#input-city',
     maxItems: 5,
   });
-  weatherInput.on('change', WeatherManager.getWeatherDataForCity);
+  weatherInput.on('change', getWeatherDataForCity);
   intMobileController('left', 'right');
 });

@@ -1,23 +1,12 @@
 export default class ResponseFormattersx {
-  constructor() {
-    this.cityName = '';
-    this.forecastList = [];
-  }
-
-  format(responseString) {
+  constructor(responseString) {
     const response = JSON.parse(responseString);
 
     this.cityName = response.city.name;
     this.forecastList = response.list.map(item => ({
-      temp: {
-        min: item.temp.min,
-        max: item.temp.max,
-      },
+      temp: item.temp,
       humidity: item.humidity,
-      weather: {
-        id: item.weather[0].id,
-        description: item.weather[0].description,
-      },
+      weather: item.weather[0],
       wind: item.speed,
     }));
   }
