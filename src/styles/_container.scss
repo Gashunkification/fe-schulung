@@ -29,6 +29,10 @@
         & + .forecast {
             border-top: 1px solid;
         }
+
+        @media (max-width: $screen-xxs) {
+            padding: .25em;
+        }
     }
 }
 .container-weekday-weather {
