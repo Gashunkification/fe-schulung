@@ -23,26 +23,12 @@
     .content {
         margin: 0 0 0 auto;
     }
-    &.col-xs-1 {
-        cursor: pointer;
-    }
-    &+ {
-        display: none;
-    }
-
-    .rotate {
-        transform-origin: left center;
-    }
 }
 
 .right {
     background: $color-orange--transparent;
     color: $color-orange;
     overflow-y: scroll;
-
-    .rotate {
-        transform-origin: left bottom;
-    }
 }
 
 .left,
@@ -57,6 +43,7 @@
             }
             .rotate {
                 transform: rotate(90deg);
+                transform-origin: left;
                 animation: rotate .75s ease-out;
                 border-bottom: none;
             }
