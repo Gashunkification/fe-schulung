@@ -38,13 +38,14 @@
     @media (max-width: $screen-md) {
         &.col-xs-1 {
             cursor: pointer;
+            overflow: hidden;
             .content>div {
                 display: none;
             }
             .rotate {
                 transform: rotate(90deg);
                 transform-origin: left;
-                animation: rotate .75s ease-out;
+                transition: transform .75s ease-out;
                 border-bottom: none;
             }
         }
