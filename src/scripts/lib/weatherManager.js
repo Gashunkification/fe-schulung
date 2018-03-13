@@ -1,6 +1,6 @@
-import MarkupGenerator from './weatherMarkupGenerator';
-import ResponseFormatter from './responseFormatter';
-import downloadWeatherForecast from './downloadWeatherData';
+import MarkupGenerator from './ui-elements/weatherMarkupGenerator';
+import ResponseFormatter from './network/responseFormatter';
+import downloadWeatherForecast from './network/downloadWeatherData';
 
 const handleError = (error) => {
   throw new Error(error);
