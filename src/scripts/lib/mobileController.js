@@ -1,6 +1,6 @@
 const classConfig = {
-  CLOSED: 'col-xs-1',
-  OPENED: 'col-xs-11',
+  CLOSED: 'col-xs-2',
+  OPENED: 'col-xs-10',
 };
 
 const changeView = (open, close) => {
