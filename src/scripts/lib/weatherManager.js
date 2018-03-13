@@ -1,4 +1,4 @@
-import MarkupGenerator from './ui-elements/weatherMarkupGenerator';
+import MarkupGenerator from './weatherMarkupGenerator';
 import ResponseFormatter from './network/responseFormatter';
 import downloadWeatherForecast from './network/downloadWeatherData';
 
