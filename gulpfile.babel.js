@@ -27,6 +27,9 @@ gulp.task('clean', () => del.sync([styleDirs.dest, dirs.dest]));
 gulp.task('copy:HTML', () => gulp.src([`${dirs.src}/index.html`])
   .pipe(gulp.dest(`${dirs.dest}`)));
 
+gulp.task('copy:Favicon', () => gulp.src(`${dirs.src}/favicon.ico`)
+  .pipe(gulp.dest(`${dirs.dest}`)));
+
 gulp.task('copy:Js', () => gulp.src([jsDirs.jquery, jsDirs.bootstrap])
   .pipe(gulp.dest(`${dirs.dest}`)));
 
@@ -38,10 +41,6 @@ gulp.task('copy:Fonts', () => gulp.src([`${dirs.src}/font/*`])
 
 gulp.task('copy:CSS', () => gulp.src([styleDirs.bootstrap])
   .pipe(gulp.dest(`${styleDirs.dest}`)));
-
-gulp.task('watch', () => {
-  gulp.watch('src/**/*.{html,scss,js}', ['clean', 'styles', 'webpack', 'copy:Js', 'copy:Img', 'copy:Fonts', 'copy:HTML']);
-});
 
 gulp.task('styles', ['copy:CSS'], errorHandler => gulp.src(styleDirs.src)
   .pipe(sass({
@@ -71,6 +70,9 @@ gulp.task('webpack', (callback) => {
   });
 });
 
-gulp.task('copy:All', ['copy:Js', 'copy:Img', 'copy:Fonts', 'copy:HTML', 'copy:CSS']);
+gulp.task('watch', () => {
+  gulp.watch('src/**/*.{html,scss,js}', ['clean', 'styles', 'webpack', 'copy:All']);
+});
+gulp.task('copy:All', ['copy:Js', 'copy:Img', 'copy:Favicon', 'copy:Fonts', 'copy:HTML', 'copy:CSS']);
 gulp.task('build', ['clean', 'styles', 'copy:All', 'webpack']);
 gulp.task('default', ['build', 'watch', 'webpack-dev-server']);
