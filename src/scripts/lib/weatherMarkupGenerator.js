@@ -88,7 +88,7 @@ class Card {
 export default class MarkupGenerator {
   static getDetails(data) {
     const result = getTagWithClassList('content');
-    const headingContainer = getTagWithClassList('heading-container', 'h2');
+    const headingContainer = getTagWithClassList(['heading-container', 'rotate'], 'h2');
     const headingCity = getCityHeading(data.name);
     const maxTemp = getContainerTemp(data.list[0].temp.max, 'max');
     const minTemp = getContainerTemp(data.list[0].temp.min);

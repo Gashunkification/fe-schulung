@@ -23,11 +23,15 @@
     .content {
         margin: 0 0 0 auto;
     }
-    &.col-xs-1{
+    &.col-xs-1 {
         cursor: pointer;
     }
-    &+{
+    &+ {
         display: none;
+    }
+
+    .rotate {
+        transform-origin: left center;
     }
 }
 
@@ -35,39 +39,41 @@
     background: $color-orange--transparent;
     color: $color-orange;
     overflow-y: scroll;
+
+    .rotate {
+        transform-origin: left bottom;
+    }
 }
 
 .left,
 .right {
     height: 90vh;
-    transition: width 0.5s ease-out;
+    transition: width 1s ease-out;
     @media (max-width: $screen-md) {
         &.col-xs-1 {
             cursor: pointer;
-            .container-forecast{
+            .content>div {
                 display: none;
             }
-            .rotate{
+            .rotate {
                 transform: rotate(90deg);
-                border-bottom: 0px black;
-            }
-            .heading-city,
-            .container-temp-max,
-            .container-temp-min{
-                display: none;
+                animation: rotate .75s ease-out;
+                border-bottom: none;
             }
         }
     }
 }
 
 .content {
-    animation: fade-in 1s ease-out;
     max-width: 100%;
     padding: 0 .25em;
     @media (min-width: $screen-lg) {
         max-width: 85%;
-    }    
+    }
     @media (min-width: $screen-xl) {
         max-width: 50%;
+    }
+    &>div {
+        animation: fade-in 1s ease-out;
     }
 }
