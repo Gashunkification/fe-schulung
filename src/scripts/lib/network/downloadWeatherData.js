@@ -5,6 +5,15 @@ const config = {
   },
 };
 
+/*
+* Downloads weekly weatjer forecast for a city
+*
+* @param {any} - consisting of {
+*   cityId: number - the unique geoID referencing a city
+*   successCallback: function - callback to be run if request successfully finished
+*   errorCallback: function - callback to be run if request failes
+* }
+*/
 const downloadWeatherForecast = ({
   cityId, successCallback, errorCallback,
 }) => {

@@ -11,6 +11,11 @@ const changeView = (open, close) => {
   close.classList.remove(classConfig.OPENED);
 };
 
+/**
+ * This class is responsible for the mobile behaviour of the app
+ *
+ * @class MobileController
+ */
 class MobileController {
   constructor(leftId, rightId) {
     this.leftSide = document.getElementById(leftId);

@@ -25,14 +25,12 @@ export default class MarkupGenerator {
    *    }
    *  })
    * }
-   * @returns HTMLNode
+   * @returns HTML for Details as a HTMLNode
    * @memberof MarkupGenerator
    */
   static getDetails(data) {
     const { name } = data;
     const { min, max } = data.list[0].temp;
-    const result = new Details({ cityName: name, minTemp: min, maxTemp: max }).markUp;
-    console.log(typeof result);
     return new Details({ cityName: name, minTemp: min, maxTemp: max }).markUp;
   }
 
@@ -52,7 +50,7 @@ export default class MarkupGenerator {
    *  },
    *  wind: number
    * }
-   * @returns
+   * @returns HTML for List as a HTMLNode
    * @memberof MarkupGenerator
    */
   static getList(data) {

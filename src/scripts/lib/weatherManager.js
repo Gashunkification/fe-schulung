@@ -6,6 +6,12 @@ const handleError = (error) => {
   throw new Error(error);
 };
 
+/**
+ * This function takes the weatherdata downloaded from openweatherapi and
+ * renders the UI according to those data
+ *
+ * @param {any} response
+ */
 function displayWeather(response) {
   const formatter = new ResponseFormatter(response);
   const forecastList = document.getElementById('forecast-list');
@@ -24,6 +30,12 @@ function displayWeather(response) {
   detailsContainer.appendChild(details);
 }
 
+/**
+ * This function takes the data for the city chosen by the user, downloads the respective
+ * weather data.
+ *
+ * @param {any} response
+ */
 const getWeatherDataForCity = (response) => {
   if (!response) {
     return;
