@@ -1,6 +1,20 @@
 import getWeatherIconForId, { getCityHeading, getFormattedTemperatureString, getTagWithClassList } from './markupUtilities';
 
+/**
+ * Class representation of a forecast-card.
+ * It contains information about the weekday and weather-conditions such as
+ * description, minimum and maximum temperature, humidity and windspeed
+ * @export default
+ * @class Card
+ */
 export default class Card {
+  /**
+   * Creates an instance of Card.
+   * @param {any} {
+   *     conditionName, conditionId, maxTemp, minTemp, humidity, wind, weekday,
+   *}
+   * @memberof Card
+   */
   constructor({
     conditionName, conditionId, maxTemp, minTemp, humidity, wind, weekday,
   }) {
@@ -13,6 +27,14 @@ export default class Card {
     this.weekday = weekday;
   }
 
+  /**
+   * Getter for the markup of one card.
+   * It generates a div with the classname 'forecast',
+   * containing all weather information ready to be rendered.
+   *
+   * @readonly
+   * @memberof Card
+   */
   get markUp() {
     const container = getTagWithClassList('forecast');
     const heading = getCityHeading(this.weekday);

@@ -1,7 +1,7 @@
 @function em($target-px, $context: 48px) {
     $target-px: $target-px / ($target-px * 0 + 1);
     $context: $context / ($context * 0 + 1);
-    @return ($target-px / $context) * 1em;
+    @return ($target-px / $context) * 1rem;
 }
 
 .tp-autocomplete {
@@ -39,13 +39,13 @@
     color: $color-orange;
     background-color: $color-gold;
     font-weight: bold;
-    font-size: 0.5em;
-    box-shadow: 5px 5px 15px 0.005em rgba(0,0,0,0.25);    
+    font-size: 0.5rem;
+    box-shadow: 5px 5px 15px 0.005rem rgba(0,0,0,0.25);    
 }
 
 .tp-ac__item {
     overflow: hidden;
-    padding: 0.5em;
+    padding: 0.5rem;
     cursor: pointer;
     user-select: none;
     white-space: nowrap;

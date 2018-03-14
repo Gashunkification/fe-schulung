@@ -13,10 +13,10 @@
 
 .container-forecast {
     .forecast {
-        padding: .75em;
+        padding: .75rem;
 
         &:first-child {
-            margin-top: -.75em;
+            margin-top: -.75rem;
         }
 
         &:hover {
@@ -30,15 +30,20 @@
             border-top: 1px solid;
         }
 
-        @media (max-width: $screen-xxs) {
-            padding: .25em;
-            font-size: .6em;
+        @media (max-width: $screen-md) {
+            padding: .25rem;
+            font-size: 1rem;
+        }
+
+        @media (max-width: $screen-xs) {
+            padding: .25rem;
+            font-size: .6rem;
         }
     }
 }
 .container-weekday-weather {
     display: inline-block;
-    font-size: 0.35em;
+    font-size: 0.35rem;
     span {
         font-size: inherit;
         display: block;
@@ -47,5 +52,5 @@
 
 .container-weather-icon {
     float: right;
-    font-size: 1.5em;
+    font-size: 1.5rem;
 }

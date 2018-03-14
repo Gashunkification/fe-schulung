@@ -2,7 +2,7 @@ body, html {
     font-size: 48px;
     height: 100vh;
     @media (max-width: $screen-xxs) {
-        font-size: 1.3em;
+        font-size: 24px;
     }
 
     @media (min-width: $screen-lg) {
@@ -11,9 +11,9 @@ body, html {
 }
 
 h2 {
-    font-size: 1em;
+    font-size: 1rem;
 }
 
 h3 {
-    font-size: .5em;
+    font-size: .5rem;
 }
