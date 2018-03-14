@@ -1,6 +1,9 @@
 body, html {
     font-size: 48px;
     height: 100vh;
+    @media (max-width: $screen-xxs) {
+        font-size: 1.3em;
+    }
 
     @media (min-width: $screen-lg) {
         overflow: hidden;
