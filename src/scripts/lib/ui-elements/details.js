@@ -2,7 +2,8 @@ import { getCityHeading, getContainerTemp, getTagWithClassList } from './markupU
 
 /**
  * Class representation of weather-details.
- * It contains information about today's weather such as the citys name, minimum and maximum Temperature
+ * It contains information about today's weather such as the citys name,
+ * minimum and maximum Temperature
  * @export
  * @class Details
  */
