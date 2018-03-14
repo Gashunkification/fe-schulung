@@ -1,71 +1,77 @@
 @function em($target-px, $context: 48px) {
-    $target-px: $target-px / ($target-px * 0 + 1);
-    $context: $context / ($context * 0 + 1);
-    @return ($target-px / $context) * 1rem;
+  $target-px: $target-px / ($target-px * 0 + 1);
+  $context: $context / ($context * 0 + 1);
+  @return ($target-px / $context) * 1rem;
 }
 
 .tp-autocomplete {
-    position: relative;
-    margin-bottom: 15px;
+  margin-bottom: 15px;
+  position: relative;
 }
 
 .tp-ac__input {
-    width: 100%;
-    padding: em(5px, 20px);
-    border: solid 1px transparent;
-    border-radius: 0;
-    font-size: em(20px);
-    font-weight: bold;
-    -webkit-appearance: none;
-    text-overflow: ellipsis;
-    &::placeholder {
-        color: #ccc;
-        -webkit-font-smoothing: antialiased;
-    }
-    &:focus {
-        outline: none;
-    }
-    &::-ms-clear {
-        display: none;
-    }
+  border: solid 1px transparent;
+  border-radius: 0;
+  font-size: em(20px);
+  font-weight: bold;
+  padding: em(5px, 20px);
+  text-overflow: ellipsis;
+  width: 100%;
+
+  &::placeholder {
+    color: $color-white;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &::-ms-clear {
+    display: none;
+  }
 }
 
 .tp-ac__list {
-    z-index: 1;
-    margin: 0 auto;
-    width: 50%;
-    padding-left: 0;
-    list-style-type: none;
-    color: $color-orange;
-    background-color: $color-gold;
-    font-weight: bold;
-    font-size: 0.5rem;
-    box-shadow: 5px 5px 15px 0.005rem rgba(0,0,0,0.25);    
+  background-color: $color-gold;
+  box-shadow: 5px 5px 15px .005rem rgba(0, 0, 0, .25);
+  color: $color-orange;
+  font-size: .5rem;
+  font-weight: bold;
+  list-style-type: none;
+  margin: 0 auto;
+  padding-left: 0;
+  width: 50%;
+  z-index: 1;
 }
 
 .tp-ac__item {
-    overflow: hidden;
-    padding: 0.5rem;
-    cursor: pointer;
-    user-select: none;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    &:hover,
-    &.is-active {
-        color: $color-gold;
-        background-color: $color-orange;
-    }
-    &.no-results,
-    &.no-results:hover {
-        cursor: default;
-        background-color: #fff;
-    }
-    span {
-        color: #4a4a4a;
-        font-weight: bold;
-    }
+  cursor: pointer;
+  overflow: hidden;
+  padding: .5rem;
+  text-overflow: ellipsis;
+  user-select: none;
+  white-space: nowrap;
 
-    & + .tp-ac__item {
-      border-top: 1px solid $color-orange;
+  &:hover,
+  &.is-active {
+    background-color: $color-orange;
+    color: $color-gold;
+  }
+
+  &.no-results,
+  &.no-results {
+    :hover {
+      background-color: $color-white;
+      cursor: default;
     }
+  }
+
+  span {
+    color: #4a4a4a;
+    font-weight: bold;
+  }
+
+  &+.tp-ac__item {
+    border-top: 1px solid $color-orange;
+  }
 }

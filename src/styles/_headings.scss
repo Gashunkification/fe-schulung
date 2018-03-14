@@ -1,22 +1,26 @@
 .heading-container {
-    text-align: center;
-    border-bottom: 3px solid;
-    padding: 5px;
-    margin-bottom: 1rem;
+  border-bottom: 3px solid;
+  margin-bottom: 1rem;
+  padding: 5px;
+  text-align: center;
 }
 
 .heading-city {
-    font-weight: bold;
-    text-transform: uppercase;
-    color: $color-gold;
-    opacity: .75;
-    margin-top: 0;
+  color: $color-gold;
+  font-weight: bold;
+  margin-top: 0;
+  opacity: .75;
+  text-transform: uppercase;
 }
 
-.forecast:hover .heading-city {
-    color: white;
+.forecast {
+  &:hover {
+    .heading-city {
+      color: $color-white;
+    }
+  }
 }
 
 .heading-condition-name {
-    font-style: italic;
+  font-style: italic;
 }

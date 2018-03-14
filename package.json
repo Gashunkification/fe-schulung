@@ -25,6 +25,7 @@
     "gulp-sass": "^3.1.0",
     "gulp-util": "^3.0.8",
     "gulp-watch": "^4.3.11",
+    "sass-lint": "^1.12.1",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.3.0",
     "webpack-stream": "^3.2.0"

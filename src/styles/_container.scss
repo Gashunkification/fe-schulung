@@ -1,56 +1,59 @@
 .container-full-width {
-    margin: 0 auto;
-    font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0 auto;
 }
 
 .container-temp-min {
-    color: $color-gold;
+  color: $color-gold;
 }
 
-.container-temp-min, .container-temp-max {
-    position: relative;
+.container-temp-min,
+.container-temp-max {
+  position: relative;
 }
 
 .container-forecast {
-    .forecast {
-        padding: .75rem;
+  .forecast {
+    padding: .75rem;
 
-        &:first-child {
-            margin-top: -.75rem;
-        }
-
-        &:hover {
-            cursor: pointer;
-            color: white;
-            background: $color-gold--transparent;
-            transition: background 150ms ease-in;
-        }
-        
-        & + .forecast {
-            border-top: 1px solid;
-        }
-
-        @media (max-width: $screen-md) {
-            padding: .25rem;
-            font-size: 1rem;
-        }
-
-        @media (max-width: $screen-xs) {
-            padding: .25rem;
-            font-size: .6rem;
-        }
+    &:first-child {
+      margin-top: -.75rem;
     }
+
+    &:hover {
+      background: $color-gold--transparent;
+      color: $color-white;
+      cursor: pointer;
+      transition: background 150ms ease-in;
+    }
+
+    &+.forecast {
+      border-top: 1px solid;
+    }
+
+    @media (max-width: $screen-md) {
+      font-size: 1rem;
+      padding: .25rem;
+    }
+
+    @media (max-width: $screen-xs) {
+      font-size: .6rem;
+      padding: .25rem;
+    }
+  }
 }
+
 .container-weekday-weather {
-    display: inline-block;
-    font-size: 0.35rem;
-    span {
-        font-size: inherit;
-        display: block;
-    }
+  display: inline-block;
+  font-size: .35rem;
+
+  span {
+    display: block;
+    font-size: inherit;
+  }
 }
 
 .container-weather-icon {
-    float: right;
-    font-size: 1.5rem;
+  float: right;
+  font-size: 1.5rem;
 }

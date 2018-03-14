@@ -1,19 +1,19 @@
-body, html {
-    font-size: 48px;
-    height: 100vh;
-    @media (max-width: $screen-xxs) {
-        font-size: 24px;
-    }
-
-    @media (min-width: $screen-lg) {
-        overflow: hidden;
-    }
+body,
+html {
+  font-size: 48px;
+  height: 100vh;
+  @media (max-width: $screen-xxs) {
+    font-size: 24px;
+  }
+  @media (min-width: $screen-lg) {
+    overflow: hidden;
+  }
 }
 
 h2 {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 h3 {
-    font-size: .5rem;
+  font-size: .5rem;
 }

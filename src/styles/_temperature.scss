@@ -1,12 +1,13 @@
 .temp-unit {
-    position: absolute;
-    right: 1rem;
-    bottom: 1rem;
-    font-size: 0.45rem;
-    text-transform: capitalize; 
+  bottom: 1rem;
+  font-size: .45rem;
+  position: absolute;
+  right: 1rem;
+  text-transform: capitalize;
 }
 
-.temp-min, .temp-max {
-    font-size: 2rem;
-    display: inline-block;
+.temp-min,
+.temp-max {
+  display: inline-block;
+  font-size: 2rem;
 }
