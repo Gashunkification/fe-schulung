@@ -42,7 +42,8 @@
       cursor: pointer;
       overflow: hidden;
 
-      .content > div {
+      .content > div,
+      .wi {
         display: none;
       }
 
