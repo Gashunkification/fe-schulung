@@ -68,3 +68,12 @@ export const getContainerTemp = (temp = '', type = 'min') => {
   container.appendChild(unit);
   return container;
 };
+
+export const showAlert = (message) => {
+  const alertContainer = document.querySelector('.container-alert');
+  alertContainer.innerText = message;
+  alertContainer.style.right = 0;
+  setTimeout(() => {
+    alertContainer.style.right = '-100000px';
+  }, 3000);
+};

@@ -21,7 +21,7 @@ const downloadWeatherForecast = ({
   xhr.open('GET', `${config.API_URLS.FORECAST}?id=${cityId}&cnt=7&APPID=${config.API_KEY}&lang=de&units=metric`);
   xhr.addEventListener('load', () => {
     if (xhr.status >= 300) {
-      errorCallback(xhr.responseText);
+      errorCallback('Es konnte kein Wetter für diese Stadt gefunden werden.');
     }
 
     successCallback(xhr.responseText);

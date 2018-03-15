@@ -1,8 +1,10 @@
 import MarkupGenerator from './weatherMarkupGenerator';
 import ResponseFormatter from './network/responseFormatter';
 import downloadWeatherForecast from './network/downloadWeatherData';
+import { showAlert } from './ui-elements/markupUtilities';
 
 const handleError = (error) => {
+  showAlert(error);
   throw new Error(error);
 };
 
@@ -38,7 +40,7 @@ function displayWeather(response) {
  */
 const getWeatherDataForCity = (response) => {
   if (!response) {
-    return;
+    handleError('Irgendwas ist schief gelaufen!');
   }
   downloadWeatherForecast({
     cityId: response.geonameId,
