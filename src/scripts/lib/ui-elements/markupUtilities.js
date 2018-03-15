@@ -64,8 +64,8 @@ export const getContainerTemp = (temp = '', type = 'min') => {
   temperature.innerHTML = getFormattedTemperatureString(temp);
   unit.innerHTML = `${type}`;
 
-  container.appendChild(temperature);
   container.appendChild(unit);
+  container.appendChild(temperature);
   return container;
 };
 
