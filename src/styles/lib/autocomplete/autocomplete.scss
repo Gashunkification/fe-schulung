@@ -42,6 +42,10 @@
   padding-left: 0;
   width: 50%;
   z-index: 1;
+
+  @media (max-width: $screen-md - 1px) {
+    width: 100%;
+  }
 }
 
 .tp-ac__item {
