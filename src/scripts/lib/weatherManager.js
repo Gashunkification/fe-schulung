@@ -40,7 +40,7 @@ function displayWeather(response) {
  */
 const getWeatherDataForCity = (response) => {
   if (!response) {
-    handleError('Irgendwas ist schief gelaufen!');
+    return;
   }
   downloadWeatherForecast({
     cityId: response.geonameId,
