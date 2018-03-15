@@ -1,4 +1,4 @@
-import { getCityHeading, getContainerTemp, getTagWithClassList } from './markupUtilities';
+import getWeatherIconForId, { getCityHeading, getContainerTemp, getTagWithClassList } from './markupUtilities';
 
 /**
  * Class representation of weather-details.
@@ -16,11 +16,12 @@ export default class Details {
    * @memberof Details
    */
   constructor({
-    cityName, minTemp, maxTemp,
+    cityName, minTemp, maxTemp, conditionId,
   }) {
     this.cityName = cityName;
     this.minTemp = minTemp;
     this.maxTemp = maxTemp;
+    this.conditionId = conditionId;
   }
 
   /**
@@ -32,15 +33,22 @@ export default class Details {
    * @memberof Details
    */
   get markUp() {
-    const { cityName, minTemp, maxTemp } = this;
+    const {
+      cityName, minTemp, maxTemp, conditionId,
+    } = this;
     const result = getTagWithClassList('content');
     const headingContainer = getTagWithClassList(['heading-container', 'rotate'], 'h2');
+    const detailsHeadingText = getTagWithClassList('details-heading', 'span');
+    const detailsHeadingIcon = getTagWithClassList(['wi', getWeatherIconForId(conditionId)], 'i');
     const headingCity = getCityHeading(cityName);
     const maxTempContainer = getContainerTemp(maxTemp, 'max');
     const minTempContainer = getContainerTemp(minTemp);
 
     result.id = 'details-container';
-    headingContainer.innerHTML = 'Aktuell';
+    detailsHeadingText.innerText = 'Aktuell';
+
+    headingContainer.appendChild(detailsHeadingText);
+    headingContainer.appendChild(detailsHeadingIcon);
 
     result.appendChild(headingContainer);
     result.appendChild(headingCity);

@@ -29,13 +29,6 @@
       margin-top: -.75rem;
     }
 
-    &:hover {
-      background: $color-gold--transparent;
-      color: $color-white;
-      cursor: pointer;
-      transition: background 150ms ease-in;
-    }
-
     &+.forecast {
       border-top: 1px solid;
     }

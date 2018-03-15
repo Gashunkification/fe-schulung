@@ -3,6 +3,10 @@
   margin-bottom: 1rem;
   padding: 5px;
   text-align: center;
+
+  .wi {
+    margin-left: 1rem;
+  }
 }
 
 .heading-city {
@@ -11,14 +15,6 @@
   margin-top: 0;
   opacity: .75;
   text-transform: uppercase;
-}
-
-.forecast {
-  &:hover {
-    .heading-city {
-      color: $color-white;
-    }
-  }
 }
 
 .heading-condition-name {
