@@ -71,9 +71,16 @@ export const getContainerTemp = (temp = '', type = 'min') => {
 
 export const showAlert = (message) => {
   const alertContainer = document.querySelector('.container-alert');
-  alertContainer.innerText = message;
+  const alertText = getTagWithClassList('alert-content', 'span');
+
+  alertText.innerText = message;
+
+  alertContainer.innerHTML = '';
+  alertContainer.appendChild(alertText);
   alertContainer.style.opacity = 1;
+  alertContainer.style.zIndex = 5;
   setTimeout(() => {
     alertContainer.style.opacity = 0;
+    alertContainer.style.zIndex = -5;
   }, 3000);
 };
