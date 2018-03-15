@@ -72,8 +72,8 @@ export const getContainerTemp = (temp = '', type = 'min') => {
 export const showAlert = (message) => {
   const alertContainer = document.querySelector('.container-alert');
   alertContainer.innerText = message;
-  alertContainer.style.right = 0;
+  alertContainer.style.opacity = 1;
   setTimeout(() => {
-    alertContainer.style.right = '-100000px';
+    alertContainer.style.opacity = 0;
   }, 3000);
 };

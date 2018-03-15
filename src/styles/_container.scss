@@ -5,10 +5,11 @@
 
 .container-alert {
   font-size: .75rem;
+  opacity: 0;
   position: absolute;
-  right: -1000px;
+  right: 0;
   top: 0;
-  transition: right 1s ease-in-out;
+  transition: opacity .75s ease-in-out;
   z-index: 5;
 }
 
