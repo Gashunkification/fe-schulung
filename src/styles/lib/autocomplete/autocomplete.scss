@@ -1,4 +1,4 @@
-@function em($target-px, $context: 48px) {
+@function rem($target-px, $context: 48px) {
   $target-px: $target-px / ($target-px * 0 + 1);
   $context: $context / ($context * 0 + 1);
   @return ($target-px / $context) * 1rem;
@@ -12,9 +12,9 @@
 .tp-ac__input {
   border: solid 1px transparent;
   border-radius: 0;
-  font-size: em(20px);
+  font-size: rem(20px);
   font-weight: bold;
-  padding: em(5px, 20px);
+  padding: rem(5px, 20px);
   text-overflow: ellipsis;
   width: 100%;
 
