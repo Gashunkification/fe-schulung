@@ -70,6 +70,8 @@ gulp.task('webpack', (callback) => {
   });
 });
 
+// Netlify
+
 gulp.task('watch', () => {
   gulp.watch('src/**/*.{html,scss,js}', ['clean', 'styles', 'webpack', 'copy:All']);
 });
