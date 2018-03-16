@@ -75,5 +75,4 @@ gulp.task('webpack', (callback) => {
     })
 });
 
-gulp.task('build', ['clean', 'styles', 'webpack', 'copyJs', 'copyImg', 'copyFonts']);
-gulp.task('default', ['build', 'watch', 'webpack-dev-server']);
+gulp.task('default', ['clean', 'styles', 'watch','webpack', 'copyJs', 'copyImg', 'copyFonts', 'webpack-dev-server']);
