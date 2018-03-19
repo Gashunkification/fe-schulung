@@ -46,6 +46,18 @@
   }
 }
 
+@for $i from 1 through 7 {
+  @include slide-to-left-keyframes-for-number($i);
+
+  .container-forecast {
+    .forecast {
+      &:nth-child(#{$i}) {
+        animation: slide-to-left-#{$i} 1s ease-out;
+      }
+    }
+  }
+}
+
 .container-weekday-weather {
   display: inline-block;
   font-size: .35rem;
