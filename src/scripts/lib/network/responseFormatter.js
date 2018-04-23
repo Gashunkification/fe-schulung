@@ -1,4 +1,16 @@
-export default class ResponseFormattersx {
+/**
+ * This class is responsible for formatting the JSON-Response from openweatherapi
+ * into a more usable format
+ *
+ * @export
+ * @class ResponseFormatters
+ */
+export default class ResponseFormatters {
+  /**
+   * Creates an instance of ResponseFormatters.
+   * @param {string} responseString - JSON-fromatted String
+   * @memberof ResponseFormatters
+   */
   constructor(responseString) {
     const response = JSON.parse(responseString);
 
@@ -11,6 +23,12 @@ export default class ResponseFormattersx {
     }));
   }
 
+  /**
+   * Returns the formatted result
+   *
+   * @readonly
+   * @memberof ResponseFormatters
+   */
   get formattedResult() {
     return {
       name: this.cityName,

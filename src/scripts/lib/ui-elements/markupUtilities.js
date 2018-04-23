@@ -1,3 +1,11 @@
+/**
+ * This function will return a suitable weather-icon class for a respective weather-condition-id
+ * which is provided by the openweatherapi.
+ *
+ * The mapping also was taken from there: https://openweathermap.org/weather-conditions
+ *
+ * It is anonymous, since it is the default export of this file.
+ */
 export default (weatherId) => {
   switch (true) {
     case weatherId < 300 && weatherId >= 200:
@@ -35,6 +43,14 @@ export default (weatherId) => {
   }
 };
 
+/**
+ * This function creates and returns a DOM-Element which can be further customized
+ *
+ * @param {arry | string} classList - represents the class(es) to be added to the element
+ * @param {string} tagName - represents the type of HTML-Tag that will be returned
+ *
+ * @returns {DOMElement} - the respecitve DOM-Element with all the classes provided by in the first parameter
+ */
 export const getTagWithClassList = (classList = [], tagName = 'div') => {
   const elem = document.createElement(tagName);
   if (typeof classList === 'string') {
@@ -45,8 +61,16 @@ export const getTagWithClassList = (classList = [], tagName = 'div') => {
   return elem;
 };
 
+/**
+ * This function accepts a number and returns a String-representation of it as the following: "NN,N °C"
+ * @param {number} temperature - the temperature as a numeric value
+ */
 export const getFormattedTemperatureString = (temperature = 0) => `${temperature.toFixed(1).toString().replace('.', ',')}°C`;
 
+/**
+ * This function creates and returns a h3-tag with the respective classes to represent a city-headline
+ * @param {string} name - Name of the city
+ */
 export const getCityHeading = (name) => {
   const container = getTagWithClassList('container-city-heading');
   const heading = getTagWithClassList('heading-city', 'h3');
@@ -56,7 +80,12 @@ export const getCityHeading = (name) => {
   return container;
 };
 
-export const getContainerTemp = (temp = '', type = 'min') => {
+/**
+ * This function creates and returns a new div-tag containing a temperature and a label, defined by temp and type params
+ * @param {number} temp - The temperature
+ * @param {string ['min' | 'max']} type - Type of temperature, will be appended to classnames
+ */
+export const getContainerTemp = (temp = 0, type = 'min') => {
   const container = getTagWithClassList(`container-temp-${type}`);
   const temperature = getTagWithClassList(`temp-${type}`, 'span');
   const unit = getTagWithClassList('temp-unit', 'span');
@@ -69,7 +98,13 @@ export const getContainerTemp = (temp = '', type = 'min') => {
   return container;
 };
 
-export const showAlert = (message) => {
+/**
+ * Shows a bootstrap-based Alert with a custom message
+ *
+ * @param {string} message - Message to be displayed in the alert
+ * @param {number} duration - Duration the alert should be visible for
+ */
+export const showAlert = (message, duration = 3000) => {
   const alertContainer = document.querySelector('.container-alert');
   const alertText = getTagWithClassList('alert-content', 'span');
 
@@ -82,5 +117,5 @@ export const showAlert = (message) => {
   setTimeout(() => {
     alertContainer.style.opacity = 0;
     alertContainer.style.zIndex = -5;
-  }, 3000);
+  }, duration);
 };
