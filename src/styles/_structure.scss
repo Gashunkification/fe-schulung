@@ -1,0 +1,62 @@
+.top {
+  background: $color-gold;
+  display: inline-block;
+  height: 10vh;
+  padding: 0;
+  z-index: 1;
+}
+
+.left {
+  background: $color-orange;
+  color: $color-white;
+  text-align: center;
+
+  .content {
+    margin: 0 0 0 auto;
+  }
+}
+
+.right {
+  background: $color-orange--transparent;
+  color: $color-orange;
+  overflow-y: scroll;
+}
+
+.left,
+.right {
+  height: 90vh;
+  transition: width 1s ease-out;
+  @media (max-width: $screen-md) {
+    &.col-xs-2 {
+      cursor: pointer;
+      overflow: hidden;
+
+      .content > div,
+      .wi {
+        display: none;
+      }
+
+      .rotate {
+        border-bottom: 0;
+        transform: rotate(90deg);
+        transform-origin: left;
+        transition: transform .75s ease-out;
+      }
+    }
+  }
+}
+
+.content {
+  max-width: 100%;
+  padding: 0 .25rem;
+  @media (min-width: $screen-lg) {
+    max-width: 85%;
+  }
+  @media (min-width: $screen-xl) {
+    max-width: 50%;
+  }
+
+  > div {
+    animation: fade-in 1.25s ease-out;
+  }
+}
